@@ -44,8 +44,14 @@ namespace JustMovedGit
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040002
+			public const int dataTxt = 2130968578;
+			
+			// aapt resource value: 0x7f040001
+			public const int getDataBtn = 2130968577;
+			
 			// aapt resource value: 0x7f040000
-			public const int button1 = 2130968576;
+			public const int storeDataBtn = 2130968576;
 			
 			static Id()
 			{
