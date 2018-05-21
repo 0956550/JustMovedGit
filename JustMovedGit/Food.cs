@@ -15,9 +15,9 @@ namespace JustMovedGit
     class Food
     {
         public string Name { get; set; }
-        private string Description { get; set; }
-        private string Ingredients { get; set; }
-        private string Procedure { get; set; }
+        public string Description { get; set; }
+        public string Ingredients { get; set; }
+        public string Procedure { get; set; }
 
         public Food(string name, string description, string ingredients, string procedure)
         {
