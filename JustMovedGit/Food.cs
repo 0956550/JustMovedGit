@@ -26,6 +26,10 @@ namespace JustMovedGit
             this.Ingredients = ingredients;
             this.Procedure = procedure;
         }
+        public Food()
+        {
+
+        }
 
     }
 }
