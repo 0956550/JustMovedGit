@@ -25,7 +25,7 @@ namespace JustMovedGit
             SetContentView(Resource.Layout.Main);
 
 
-            //Find button by id and make a Button variable. Set ID name in xml
+            //Find button by id and make a Button variable. Set ID name in xml test
             Button storeDataBtn = FindViewById<Button>(Resource.Id.storeDataBtn);
             Button getDataBtn = FindViewById<Button>(Resource.Id.getDataBtn);
 
