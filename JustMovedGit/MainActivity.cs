@@ -3,6 +3,10 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using SQLite;
+using Android.Content;
+using Newtonsoft.Json;
+using JustMovedGit.Classes;
+using JustMovedGit.Activities;
 
 namespace JustMovedGit
 {
@@ -11,6 +15,9 @@ namespace JustMovedGit
     {
         //Path string to the Database File
         string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbJustMoved.db3");
+
+        //Test Data, global acces for testing.
+        Recepten shoarma = new Recepten(1, "Shoarma", "Een shoarma gerecht voor 4 personen met shoarma en aardappel.", " +- 5/10 min", "-600g shoarma -450g aardappelschijfjes -250g fijngesneden andijvie -125g creme fraiche -gember siroop -1 paprika", "Maak de andijvie nat met de gember siroop in een kom, snij de paprika in lange plakjes. Plaats de andijvie op de borden.", "Bak de shoarma en de aardappelschijfjes in dezelfde pan gaar. Voeg op het laatst de creme fraiche toe.");
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,29 +37,27 @@ namespace JustMovedGit
                 var db = new SQLiteConnection(dbPath);
 
                 //Creates table with the layout of the Food class
-                db.CreateTable<Food>();
+                db.CreateTable<Recepten>();
 
-                Food salad = new Food("Groente salade", "Een salade gemaakt van verscheidene groentes", "200 gram Eikenblad sla melange, 5 cherry tomaatjes, 1/4 komkommer, 1/2 paprika, 1 el olijf olie.", "Snij de groentes in stukjes en doe het bij elkaar in een kom. Voeg de olijf olie erbij en genieten maar.");
+                
 
                 //Store object in table
-                db.Insert(salad);
+                db.Insert(shoarma);
             };
 
             getDataBtn.Click += delegate
             {
-                TextView dataTxt = FindViewById<Button>(Resource.Id.dataTxt);
+                
+                Intent intent = new Intent(this, typeof(ReceptenMenuActivity));
+                intent.PutExtra("shoarma", JsonConvert.SerializeObject(shoarma));
+
+                this.StartActivity(intent);
 
                 //Setup connection
                 var db = new SQLiteConnection(dbPath);
 
                 //Connect to table
-                var foodTable = db.Table<Food>();
-
-                foreach(var item in foodTable)
-                {
-                    Food food = new Food(item.Name, item.Description, item.Ingredients, item.Procedure);
-                    dataTxt.Text += food + "\n";
-                }
+                var foodTable = db.Table<Recepten>();
             };
         }
     }
