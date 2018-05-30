@@ -15,14 +15,14 @@ namespace JustMovedGit.Activities
     [Activity(Label = "ReceptenMenuActivity")]
     public class ReceptenMenuActivity : Activity
     {
-
+        //list with items
         private List<string> testList = new List<string>();
         private ListView testListView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             SetContentView(Resource.Layout.ReceptenMenuView);
 
             testListView = FindViewById<ListView>(Resource.Id.menuList);
