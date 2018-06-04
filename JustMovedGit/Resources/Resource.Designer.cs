@@ -41,20 +41,66 @@ namespace JustMovedGit
 			}
 		}
 		
+		public partial class Drawable
+		{
+			
+			// aapt resource value: 0x7f020000
+			public const int budget = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int ehbo = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int favorieten = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int food = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int huishouden = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int planning = 2130837509;
+			
+			static Drawable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Drawable()
+			{
+			}
+		}
+		
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040003
-			public const int dataTxt = 2130968579;
+			// aapt resource value: 0x7f060001
+			public const int budgetBtn = 2131099649;
 			
-			// aapt resource value: 0x7f040001
-			public const int getDataBtn = 2130968577;
+			// aapt resource value: 0x7f060008
+			public const int dataTxt = 2131099656;
 			
-			// aapt resource value: 0x7f040002
-			public const int menuList = 2130968578;
+			// aapt resource value: 0x7f060006
+			public const int favorietenBtn = 2131099654;
 			
-			// aapt resource value: 0x7f040000
-			public const int storeDataBtn = 2130968576;
+			// aapt resource value: 0x7f060000
+			public const int gridLayout = 2131099648;
+			
+			// aapt resource value: 0x7f060002
+			public const int huishoudenBtn = 2131099650;
+			
+			// aapt resource value: 0x7f060007
+			public const int menuList = 2131099655;
+			
+			// aapt resource value: 0x7f060005
+			public const int plannenBtn = 2131099653;
+			
+			// aapt resource value: 0x7f060003
+			public const int receptBtn = 2131099651;
+			
+			// aapt resource value: 0x7f060004
+			public const int veiligheidBtn = 2131099652;
 			
 			static Id()
 			{
@@ -69,14 +115,14 @@ namespace JustMovedGit
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f020000
-			public const int Main = 2130837504;
+			// aapt resource value: 0x7f030000
+			public const int Main = 2130903040;
 			
-			// aapt resource value: 0x7f020001
-			public const int ReceptenMenuView = 2130837505;
+			// aapt resource value: 0x7f030001
+			public const int ReceptenMenuView = 2130903041;
 			
-			// aapt resource value: 0x7f020002
-			public const int ReceptenView = 2130837506;
+			// aapt resource value: 0x7f030002
+			public const int ReceptenView = 2130903042;
 			
 			static Layout()
 			{
@@ -91,8 +137,8 @@ namespace JustMovedGit
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int app_name = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int app_name = 2130968576;
 			
 			static String()
 			{
@@ -100,6 +146,22 @@ namespace JustMovedGit
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int Theme_Custom = 2131034112;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

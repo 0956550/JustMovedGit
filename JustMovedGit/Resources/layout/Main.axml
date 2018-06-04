@@ -4,15 +4,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
-    <Button
-        android:text="Store Data"
+    android:minHeight="25px"
+    android:background="#ffffffff">
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/storeDataBtn" />
-    <Button
-        android:text="Get Data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/getDataBtn" />
+        android:layout_height="550.5dp"
+        android:id="@+id/gridLayout"
+        android:layout_marginBottom="0.0dp"
+        android:rowCount="6"
+        android:columnCount="2"
+        android:padding="110px"
+        android:paddingTop="60px"
+        android:background="#ffffffff">
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/budget"
+            android:id="@+id/budgetBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/huishouden"
+            android:id="@+id/huishoudenBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/food"
+            android:id="@+id/receptBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/ehbo"
+            android:id="@+id/veiligheidBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/planning"
+            android:id="@+id/plannenBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+        <ImageButton
+            android:layout_height="280px"
+            android:layout_width="280px"
+            android:src="@drawable/favorieten"
+            android:id="@+id/favorietenBtn"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@android:color/white" />
+    </GridLayout>
 </LinearLayout>
