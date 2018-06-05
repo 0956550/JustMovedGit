@@ -24,6 +24,6 @@
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@dra"
-        android:texColor="#ffffff" />
+        android:background="@drawable"
+        android:textColor="#ffffff" />
 </FrameLayout>
