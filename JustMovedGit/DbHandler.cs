@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace JustMovedGit
 {
-    public class DbCopyCheck
+    public class DbHandler
     {
         public static string GetLocalFilePath(string filename)
         {

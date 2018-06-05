@@ -13,32 +13,56 @@ namespace JustMovedGit
     [Activity(Label = "JustMovedGit", MainLauncher = true)]
     public class MainActivity : Activity
     {
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
+            ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
+            ImageButton huishoudenBtn = FindViewById<ImageButton>(Resource.Id.huishoudenBtn);
+            ImageButton plannenBtn = FindViewById<ImageButton>(Resource.Id.plannenBtn);
+            ImageButton veiligheidBtn = FindViewById<ImageButton>(Resource.Id.veiligheidBtn);
+            ImageButton receptBtn = FindViewById<ImageButton>(Resource.Id.receptBtn);
+            ImageButton favorietenBtn = FindViewById<ImageButton>(Resource.Id.favorietenBtn);
+
             //DbCopyCheck.GetLocalFilePath("JustMovedDb.sqlite");
-
-            //Find button by id and make a Button variable. Set ID name in xml test
-            /*
-            Button receptenMenu = FindViewById<Button>(Resource.Id.storeDataBtn);
-            Button huishoudenMenu = FindViewById<Button>(Resource.Id.getDataBtn);
-            Button budgetMenu = FindViewById<Button>(Resource.Id.storeDataBtn);
-            Button veiligheidMenu = FindViewById<Button>(Resource.Id.getDataBtn);
-
-            //Button action on click
-            storeDataBtn.Click += delegate
+           
+            budgetBtn.Click += delegate
             {
                 
             };
 
-            getDataBtn.Click += delegate
+            huishoudenBtn.Click += delegate
             {
 
             };
-            */
+
+            plannenBtn.Click += delegate
+            {
+
+            };
+
+            veiligheidBtn.Click += delegate
+            {
+
+            };
+
+            receptBtn.Click += delegate
+            {
+                Intent receptMenuActivity = new Intent(this, typeof(ReceptenMenuActivity));
+                this.StartActivity(receptMenuActivity);
+            };
+
+            favorietenBtn.Click += delegate
+            {
+
+            };
+        }
+        public static void SetTitleIcon()
+        {
+
         }
     }
 }

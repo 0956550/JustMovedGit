@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "HuishoudenActivity")]
-    public class HuishoudenActivity : Activity
+    [Activity(Label = "FavorietenActivity")]
+    public class FavorietenMenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

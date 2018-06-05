@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "PlannenActivity")]
-    public class PlannenActivity : Activity
+    [Activity(Label = "VeiligheidActivity")]
+    public class VeiligheidMenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
