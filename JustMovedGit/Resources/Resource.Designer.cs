@@ -75,20 +75,17 @@ namespace JustMovedGit
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060008
-			public const int LinearLayout = 2131099656;
+			// aapt resource value: 0x7f06000a
+			public const int LinearLayout = 2131099658;
 			
-			// aapt resource value: 0x7f060009
-			public const int ListView = 2131099657;
+			// aapt resource value: 0x7f06000b
+			public const int ListView = 2131099659;
 			
 			// aapt resource value: 0x7f060001
 			public const int budgetBtn = 2131099649;
 			
 			// aapt resource value: 0x7f060006
 			public const int favorietenBtn = 2131099654;
-			
-			// aapt resource value: 0x7f060007
-			public const int frameLayout1 = 2131099655;
 			
 			// aapt resource value: 0x7f060000
 			public const int gridLayout = 2131099648;
@@ -102,14 +99,35 @@ namespace JustMovedGit
 			// aapt resource value: 0x7f060003
 			public const int receptBtn = 2131099651;
 			
-			// aapt resource value: 0x7f06000a
-			public const int searchBar = 2131099658;
+			// aapt resource value: 0x7f060009
+			public const int searchBar = 2131099657;
+			
+			// aapt resource value: 0x7f06000e
+			public const int txtReceptBereidingstijd = 2131099662;
+			
+			// aapt resource value: 0x7f060011
+			public const int txtReceptBereidingswijze = 2131099665;
+			
+			// aapt resource value: 0x7f06000d
+			public const int txtReceptBeschrijving = 2131099661;
+			
+			// aapt resource value: 0x7f06000f
+			public const int txtReceptIngredienten = 2131099663;
+			
+			// aapt resource value: 0x7f060012
+			public const int txtReceptKosten = 2131099666;
 			
 			// aapt resource value: 0x7f06000c
-			public const int txtReceptKosten = 2131099660;
+			public const int txtReceptTitel = 2131099660;
 			
-			// aapt resource value: 0x7f06000b
-			public const int txtReceptNaam = 2131099659;
+			// aapt resource value: 0x7f060010
+			public const int txtReceptVoorbereiding = 2131099664;
+			
+			// aapt resource value: 0x7f060008
+			public const int txtSubTitel = 2131099656;
+			
+			// aapt resource value: 0x7f060007
+			public const int txtTitel = 2131099655;
 			
 			// aapt resource value: 0x7f060004
 			public const int veiligheidBtn = 2131099652;
@@ -131,13 +149,13 @@ namespace JustMovedGit
 			public const int Main = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int ReceptenMenuView = 2130903041;
+			public const int MenuListview = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ReceptenView = 2130903042;
+			public const int MenuView = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int test = 2130903043;
+			public const int ReceptView = 2130903043;
 			
 			static Layout()
 			{

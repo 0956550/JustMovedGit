@@ -55,11 +55,10 @@ namespace JustMovedGit.Adapters
                 row = LayoutInflater.From(mContext).Inflate(mtestLayout, null, false);
             }
 
-            //LinearLayout layout = row.FindViewById<LinearLayout>(Resource.Id.linearLayout);
-            TextView txtNaam = row.FindViewById<TextView>(Resource.Id.txtReceptNaam);
-            TextView txtKosten = row.FindViewById<TextView>(Resource.Id.txtReceptKosten);
+            TextView txtNaam = row.FindViewById<TextView>(Resource.Id.txtTitel);
+            TextView txtKosten = row.FindViewById<TextView>(Resource.Id.txtSubTitel);
             txtNaam.Text = recepten[position].naam;
-            txtKosten.Text = recepten[position].kosten;
+            txtKosten.Text = recepten[position].beschrijving;
 
             return row;
         }

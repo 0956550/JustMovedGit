@@ -27,7 +27,7 @@ namespace JustMovedGit
             ImageButton receptBtn = FindViewById<ImageButton>(Resource.Id.receptBtn);
             ImageButton favorietenBtn = FindViewById<ImageButton>(Resource.Id.favorietenBtn);
 
-            //DbCopyCheck.GetLocalFilePath("JustMovedDb.sqlite");
+            DbHandler.GetLocalFilePath("JustMovedDb.sqlite");
            
             budgetBtn.Click += delegate
             {

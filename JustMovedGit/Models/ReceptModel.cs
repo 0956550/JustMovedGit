@@ -23,10 +23,25 @@ namespace JustMovedGit.Models
             this.conn = new SQLiteConnection(DbHandler.GetLocalFilePath("JustMovedDb.sqlite"));
         }
 
-        public List<Recept> GetAllData(string input)
+        public List<Recept> GetAllData()
         {
             List<Recept> recepten = conn.Query<Recept>("SELECT * FROM recepten")
-                .Where(r => r.naam.ToLower().Contains(input))
+                .ToList();
+            return recepten;
+        }
+
+        public List<Recept> GetSearchData(string query)
+        {
+            List<Recept> recepten = conn.Query<Recept>("SELECT * FROM recepten")
+                .Where(r => r.naam.ToLower().Contains(query))
+                .ToList();
+            return recepten;
+        }
+
+        public List<Recept> GetSingleData(string id)
+        {
+            List<Recept> recepten = conn.Query<Recept>("SELECT * FROM recepten")
+                .Where(r => r.id.Equals(id))
                 .ToList();
             return recepten;
         }

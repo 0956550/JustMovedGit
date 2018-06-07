@@ -18,8 +18,29 @@ namespace JustMovedGit.Activities.Items
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.ReceptView);
 
-            // Create your application here
+            string id = Intent.GetStringExtra("id");
+            
+            TextView titel = FindViewById<TextView>(Resource.Id.txtReceptTitel);
+            TextView beschrijving = FindViewById<TextView>(Resource.Id.txtReceptBeschrijving);
+            TextView bereidingstijd = FindViewById<TextView>(Resource.Id.txtReceptBereidingstijd);
+            TextView ingredienten = FindViewById<TextView>(Resource.Id.txtReceptIngredienten);
+            TextView voorbereiding = FindViewById<TextView>(Resource.Id.txtReceptVoorbereiding);
+            TextView bereidingswijze = FindViewById<TextView>(Resource.Id.txtReceptBereidingswijze);
+            TextView kosten = FindViewById<TextView>(Resource.Id.txtReceptKosten);
+
+            Models.ReceptModel model = new Models.ReceptModel();
+            List<Classes.Recept> recept = model.GetSingleData(id);
+            Classes.Recept hetRecept = recept[0];
+
+            titel.Text = hetRecept.naam;
+            beschrijving.Text = hetRecept.beschrijving;
+            bereidingstijd.Text = hetRecept.beschrijving;
+            ingredienten.Text = hetRecept.beschrijving;
+            voorbereiding.Text = hetRecept.beschrijving;
+            bereidingswijze.Text = hetRecept.beschrijving;
+            kosten.Text = hetRecept.beschrijving;
         }
     }
 }
