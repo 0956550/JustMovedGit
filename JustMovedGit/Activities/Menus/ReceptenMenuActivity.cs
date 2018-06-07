@@ -40,8 +40,8 @@ namespace JustMovedGit.Activities
             {
                 string query = searchBar.Text.ToLower();
                 List<Recept>searchReceopten = model.GetSearchData(query);
-                ReceptenAdapter searchAdapter = new ReceptenAdapter(this, searchReceopten, Resource.Layout.MenuListview);
-                receptenMenu.Adapter = searchAdapter;
+                adapter = new ReceptenAdapter(this, searchReceopten, Resource.Layout.MenuListview);
+                receptenMenu.Adapter = adapter;
             };
         }
     }
