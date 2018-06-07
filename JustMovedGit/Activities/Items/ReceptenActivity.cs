@@ -36,11 +36,11 @@ namespace JustMovedGit.Activities.Items
 
             titel.Text = hetRecept.naam;
             beschrijving.Text = hetRecept.beschrijving;
-            bereidingstijd.Text = hetRecept.beschrijving;
-            ingredienten.Text = hetRecept.beschrijving;
-            voorbereiding.Text = hetRecept.beschrijving;
-            bereidingswijze.Text = hetRecept.beschrijving;
-            kosten.Text = hetRecept.beschrijving;
+            bereidingstijd.Text = hetRecept.bereidingstijd;
+            ingredienten.Text = hetRecept.ingredienten;
+            voorbereiding.Text = hetRecept.voorbereiding;
+            bereidingswijze.Text = hetRecept.bereidingswijze;
+            kosten.Text = hetRecept.kosten;
         }
     }
 }
