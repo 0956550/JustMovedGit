@@ -8,61 +8,157 @@
     android:background="#ffffffff">
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="550.5dp"
+        android:layout_height="match_parent"
         android:id="@+id/gridLayout"
-        android:layout_marginBottom="0.0dp"
         android:rowCount="6"
         android:columnCount="2"
-        android:padding="110px"
-        android:paddingTop="60px"
+        android:paddingLeft="100px"
+        android:paddingRight="100px"
+        android:paddingTop="30px"
         android:background="#ffffffff">
-        <ImageButton
-            android:layout_height="280px"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/budget"
-            android:id="@+id/budgetBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
-        <ImageButton
-            android:layout_height="280px"
+            android:layout_height="335px"
+            android:id="@+id/linearLayout1">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/budget"
+                android:id="@+id/budgetBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Budget"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtBudget" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/huishouden"
-            android:id="@+id/huishoudenBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
-        <ImageButton
-            android:layout_height="280px"
+            android:layout_height="335px"
+            android:id="@+id/linearLayout2">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/huishouden"
+                android:id="@+id/huishoudenBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Huishouden"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHuishouden" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/food"
-            android:id="@+id/receptBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
-        <ImageButton
-            android:layout_height="280px"
+            android:layout_height="335px"
+            android:id="@+id/linearLayout3">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/food"
+                android:id="@+id/receptBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Recepten"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtRecepten" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/ehbo"
-            android:id="@+id/veiligheidBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
-        <ImageButton
-            android:layout_height="280px"
+            android:layout_height="335px"
+            android:id="@+id/linearLayout4">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/ehbo"
+                android:id="@+id/veiligheidBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Ehbo"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtEhbo" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/planning"
-            android:id="@+id/plannenBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
-        <ImageButton
-            android:layout_height="280px"
+            android:layout_height="335px"
+            android:id="@+id/linearLayout5">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/planning"
+                android:id="@+id/plannenBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Planning"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPlanning" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="280px"
-            android:src="@drawable/favorieten"
-            android:id="@+id/favorietenBtn"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:backgroundTint="@android:color/white" />
+            android:layout_height="335px"
+            android:id="@+id/linearLayout6">
+            <ImageButton
+                android:layout_height="280px"
+                android:layout_width="280px"
+                android:src="@drawable/favorieten"
+                android:id="@+id/favorietenBtn"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@android:color/white" />
+            <TextView
+                android:text="Favorieten"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textAlignment="center"
+                android:textColor="#5C5F68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtFavorieten" />
+        </LinearLayout>
     </GridLayout>
 </LinearLayout>

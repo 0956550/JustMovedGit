@@ -45,5 +45,17 @@ namespace JustMovedGit.Models
                 .ToList();
             return recepten;
         }
+        public Boolean setFavorite(string id)
+        {
+            List<Recept> recepten = conn.Query<Recept>("UPDATE recepten SET favorite = 1 WHERE ID =" + id);
+            if(Int32.Parse(GetSingleData(id)[0].favorite) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

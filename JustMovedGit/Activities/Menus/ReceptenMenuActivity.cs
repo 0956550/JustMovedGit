@@ -23,7 +23,7 @@ namespace JustMovedGit.Activities
             ListView receptenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
             List<Recept> recepten = model.GetAllData();
-            ReceptenAdapter adapter = new ReceptenAdapter(this, recepten, Resource.Layout.MenuListview);
+            ReceptenAdapter adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
             receptenMenu.Adapter = adapter;
             EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
 
@@ -40,7 +40,7 @@ namespace JustMovedGit.Activities
             {
                 string query = searchBar.Text.ToLower();
                 List<Recept>searchReceopten = model.GetSearchData(query);
-                adapter = new ReceptenAdapter(this, searchReceopten, Resource.Layout.MenuListview);
+                adapter = new ReceptenAdapter(this, searchReceopten, Resource.Layout.ReceptMenuListview);
                 receptenMenu.Adapter = adapter;
             };
         }

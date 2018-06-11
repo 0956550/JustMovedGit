@@ -75,62 +75,107 @@ namespace JustMovedGit
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06000a
-			public const int LinearLayout = 2131099658;
+			// aapt resource value: 0x7f060014
+			public const int LinearLayout = 2131099668;
 			
-			// aapt resource value: 0x7f06000b
-			public const int ListView = 2131099659;
+			// aapt resource value: 0x7f060015
+			public const int ListView = 2131099669;
 			
-			// aapt resource value: 0x7f060001
-			public const int budgetBtn = 2131099649;
+			// aapt resource value: 0x7f060002
+			public const int budgetBtn = 2131099650;
 			
-			// aapt resource value: 0x7f060006
-			public const int favorietenBtn = 2131099654;
+			// aapt resource value: 0x7f060011
+			public const int favorietenBtn = 2131099665;
+			
+			// aapt resource value: 0x7f06001b
+			public const int favorietenReceptBtn = 2131099675;
 			
 			// aapt resource value: 0x7f060000
 			public const int gridLayout = 2131099648;
 			
-			// aapt resource value: 0x7f060002
-			public const int huishoudenBtn = 2131099650;
-			
 			// aapt resource value: 0x7f060005
-			public const int plannenBtn = 2131099653;
+			public const int huishoudenBtn = 2131099653;
 			
-			// aapt resource value: 0x7f060003
-			public const int receptBtn = 2131099651;
-			
-			// aapt resource value: 0x7f060009
-			public const int searchBar = 2131099657;
-			
-			// aapt resource value: 0x7f06000e
-			public const int txtReceptBereidingstijd = 2131099662;
-			
-			// aapt resource value: 0x7f060011
-			public const int txtReceptBereidingswijze = 2131099665;
-			
-			// aapt resource value: 0x7f06000d
-			public const int txtReceptBeschrijving = 2131099661;
-			
-			// aapt resource value: 0x7f06000f
-			public const int txtReceptIngredienten = 2131099663;
-			
-			// aapt resource value: 0x7f060012
-			public const int txtReceptKosten = 2131099666;
-			
-			// aapt resource value: 0x7f06000c
-			public const int txtReceptTitel = 2131099660;
-			
-			// aapt resource value: 0x7f060010
-			public const int txtReceptVoorbereiding = 2131099664;
-			
-			// aapt resource value: 0x7f060008
-			public const int txtSubTitel = 2131099656;
-			
-			// aapt resource value: 0x7f060007
-			public const int txtTitel = 2131099655;
+			// aapt resource value: 0x7f060001
+			public const int linearLayout1 = 2131099649;
 			
 			// aapt resource value: 0x7f060004
-			public const int veiligheidBtn = 2131099652;
+			public const int linearLayout2 = 2131099652;
+			
+			// aapt resource value: 0x7f060007
+			public const int linearLayout3 = 2131099655;
+			
+			// aapt resource value: 0x7f06000a
+			public const int linearLayout4 = 2131099658;
+			
+			// aapt resource value: 0x7f06000d
+			public const int linearLayout5 = 2131099661;
+			
+			// aapt resource value: 0x7f060010
+			public const int linearLayout6 = 2131099664;
+			
+			// aapt resource value: 0x7f06000e
+			public const int plannenBtn = 2131099662;
+			
+			// aapt resource value: 0x7f060008
+			public const int receptBtn = 2131099656;
+			
+			// aapt resource value: 0x7f060019
+			public const int scrollView1 = 2131099673;
+			
+			// aapt resource value: 0x7f060013
+			public const int searchBar = 2131099667;
+			
+			// aapt resource value: 0x7f060003
+			public const int txtBudget = 2131099651;
+			
+			// aapt resource value: 0x7f06000c
+			public const int txtEhbo = 2131099660;
+			
+			// aapt resource value: 0x7f060012
+			public const int txtFavorieten = 2131099666;
+			
+			// aapt resource value: 0x7f060006
+			public const int txtHuishouden = 2131099654;
+			
+			// aapt resource value: 0x7f06000f
+			public const int txtPlanning = 2131099663;
+			
+			// aapt resource value: 0x7f06001d
+			public const int txtReceptBereidingstijd = 2131099677;
+			
+			// aapt resource value: 0x7f060020
+			public const int txtReceptBereidingswijze = 2131099680;
+			
+			// aapt resource value: 0x7f06001c
+			public const int txtReceptBeschrijving = 2131099676;
+			
+			// aapt resource value: 0x7f06001e
+			public const int txtReceptIngredienten = 2131099678;
+			
+			// aapt resource value: 0x7f060021
+			public const int txtReceptKosten = 2131099681;
+			
+			// aapt resource value: 0x7f06001a
+			public const int txtReceptTitel = 2131099674;
+			
+			// aapt resource value: 0x7f06001f
+			public const int txtReceptVoorbereiding = 2131099679;
+			
+			// aapt resource value: 0x7f060009
+			public const int txtRecepten = 2131099657;
+			
+			// aapt resource value: 0x7f060017
+			public const int txtSubTitel = 2131099671;
+			
+			// aapt resource value: 0x7f060016
+			public const int txtTitel = 2131099670;
+			
+			// aapt resource value: 0x7f06000b
+			public const int veiligheidBtn = 2131099659;
+			
+			// aapt resource value: 0x7f060018
+			public const int view1 = 2131099672;
 			
 			static Id()
 			{
@@ -149,10 +194,10 @@ namespace JustMovedGit
 			public const int Main = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int MenuListview = 2130903041;
+			public const int MenuView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int MenuView = 2130903042;
+			public const int ReceptMenuListview = 2130903042;
 			
 			// aapt resource value: 0x7f030003
 			public const int ReceptView = 2130903043;

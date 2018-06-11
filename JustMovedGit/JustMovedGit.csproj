@@ -104,7 +104,7 @@
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\MenuListview.axml" />
+    <AndroidResource Include="Resources\layout\ReceptMenuListview.axml" />
     <AndroidResource Include="Resources\layout\MenuView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>

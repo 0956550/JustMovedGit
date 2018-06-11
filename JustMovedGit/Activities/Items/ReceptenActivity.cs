@@ -29,6 +29,7 @@ namespace JustMovedGit.Activities.Items
             TextView voorbereiding = FindViewById<TextView>(Resource.Id.txtReceptVoorbereiding);
             TextView bereidingswijze = FindViewById<TextView>(Resource.Id.txtReceptBereidingswijze);
             TextView kosten = FindViewById<TextView>(Resource.Id.txtReceptKosten);
+            ImageButton favorieten = FindViewById<ImageButton>(Resource.Id.favorietenReceptBtn);
 
             Models.ReceptModel model = new Models.ReceptModel();
             List<Classes.Recept> recept = model.GetSingleData(id);
@@ -41,6 +42,11 @@ namespace JustMovedGit.Activities.Items
             voorbereiding.Text = hetRecept.voorbereiding;
             bereidingswijze.Text = hetRecept.bereidingswijze;
             kosten.Text = hetRecept.kosten;
+
+            favorieten.Click += delegate
+            {
+                Console.WriteLine(model.setFavorite(id));
+            };
         }
     }
 }
