@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/linearLayout7"
+        android:background="#092B5B">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_height="150px"
+            android:layout_width="150px"
+            android:layout_marginLeft="25px"
+            android:id="@+id/userMenu" />
+        <TextView
+            android:text="Just Moved"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="35px"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50px"
+            android:layout_width="300px"
+            android:layout_marginLeft="50px"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBudget"
+            android:fontFamily="@drawable/logoFont" />
+    </LinearLayout>
+    <ScrollView
+        android:paddingTop="50px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <TextView
+                android:text="Account naam"
+                android:textSize="40px"
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:id="@+id/txtAccountNaam"
+                android:textColor="#092B5B" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:id="@+id/accountNaamEditText"
+                android:background="#ECF0F1"
+                android:textColor="#092B5B" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:background="#092B5B"
+                android:id="@+id/view1" />
+            <TextView
+                android:text="Wachtwoord"
+                android:textSize="40px"
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:id="@+id/txtWachtwoord"
+                android:textColor="#092B5B" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:id="@+id/wachtwoordEditText"
+                android:background="#ECF0F1"
+                android:textColor="#092B5B" 
+                android:inputType="textPassword"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:background="#092B5B"
+                android:id="@+id/view1" />
+            <Button
+                android:text="Log in"
+                android:layout_marginTop="15px"
+                android:background="#092B5B"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="75px"
+                android:id="@+id/loginButton" />
+            <Button
+                android:text="Maak Account"
+                android:layout_marginTop="15px"
+                android:background="#092B5B"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="75px"
+                android:id="@+id/createAccountBtn" />
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

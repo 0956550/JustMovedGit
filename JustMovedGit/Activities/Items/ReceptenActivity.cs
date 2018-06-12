@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities.Items
 {
-    [Activity(Label = "Recepten")]
+    [Activity(Label = "Recepten", Theme = "@android:style/Theme.NoTitleBar")]
     public class ReceptenActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

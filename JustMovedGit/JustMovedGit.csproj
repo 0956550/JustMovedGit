@@ -75,13 +75,16 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Items\PlannenActivity.cs" />
     <Compile Include="Activities\Items\ReceptenActivity.cs" />
     <Compile Include="Activities\Menus\BudgetMenuActivity.cs" />
     <Compile Include="Activities\Menus\FavorietenMenuActivity.cs" />
     <Compile Include="Activities\Menus\HuishoudenMenuActivity.cs" />
+    <Compile Include="Activities\Menus\InlogActivity.cs" />
     <Compile Include="Activities\Menus\PlannenMenuActivity.cs" />
     <Compile Include="Activities\Menus\ReceptenMenuActivity.cs" />
     <Compile Include="Activities\Menus\VeiligheidMenuActivity.cs" />
+    <Compile Include="Adapters\PlannenAdapter.cs" />
     <Compile Include="Adapters\ReceptenAdapter.cs" />
     <Compile Include="Classes\Budget.cs" />
     <Compile Include="Classes\Huishouden.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Classes\Veiligheid.cs" />
     <Compile Include="DbHandler.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\PlannenModel.cs" />
     <Compile Include="Models\ReceptModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +113,14 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ReceptView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\OtherMenuListview.axml" />
+    <AndroidResource Include="Resources\layout\PlannenView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\logoFont.ttf" />
+    <AndroidResource Include="Resources\layout\UserMenu.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -142,6 +154,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\budget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

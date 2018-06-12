@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "BudgetMenuActivity")]
+    [Activity(Label = "BudgetMenuActivity", Theme = "@android:style/Theme.NoTitleBar")]
     public class BudgetMenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "VeiligheidActivity")]
+    [Activity(Label = "VeiligheidActivity", Theme = "@android:style/Theme.NoTitleBar")]
     public class VeiligheidMenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

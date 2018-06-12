@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingTop="50px"
+    android:paddingLeft="30px"
+    android:paddingRight="30px">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1">
+                <TextView
+                    android:text="Titel"
+                    android:textSize="65px"
+                    android:layout_width="600px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtReceptTitel"
+                    android:textColor="#092B5B" />
+                <ImageButton
+                    android:layout_width="100px"
+                    android:layout_height="100px"
+                    android:src="@drawable/favorieten"
+                    android:id="@+id/favorietenReceptBtn"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+            <TextView
+                android:text="Beschrijving"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtReceptBeschrijving"
+                android:textColor="#33588c" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:background="#092B5B"
+                android:id="@+id/view1" />
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

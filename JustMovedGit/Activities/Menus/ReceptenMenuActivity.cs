@@ -11,7 +11,7 @@ using JustMovedGit.Models;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "ReceptenMenuActivity")]
+    [Activity(Label = "ReceptenMenuActivity", Theme = "@android:style/Theme.NoTitleBar")]
     public class ReceptenMenuActivity : Activity
     {
         private ReceptModel model = new ReceptModel();

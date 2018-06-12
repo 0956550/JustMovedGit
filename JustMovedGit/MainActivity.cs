@@ -7,10 +7,11 @@ using Android.Content;
 using Newtonsoft.Json;
 using JustMovedGit.Classes;
 using JustMovedGit.Activities;
+using JustMovedGit.Activities.Menus;
 
 namespace JustMovedGit
 {
-    [Activity(Label = "JustMovedGit", MainLauncher = true)]
+    [Activity(Label = "JustMovedGit", MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : Activity
     {
         
@@ -26,9 +27,16 @@ namespace JustMovedGit
             ImageButton veiligheidBtn = FindViewById<ImageButton>(Resource.Id.veiligheidBtn);
             ImageButton receptBtn = FindViewById<ImageButton>(Resource.Id.receptBtn);
             ImageButton favorietenBtn = FindViewById<ImageButton>(Resource.Id.favorietenBtn);
+            ImageButton userBtn = FindViewById<ImageButton>(Resource.Id.userButton);
 
             DbHandler.GetLocalFilePath("JustMovedDb.sqlite");
-           
+
+            userBtn.Click += delegate
+            {
+                Intent inlogActivity = new Intent(this, typeof(InlogActivity));
+                this.StartActivity(inlogActivity);
+            };
+
             budgetBtn.Click += delegate
             {
                 
@@ -41,7 +49,8 @@ namespace JustMovedGit
 
             plannenBtn.Click += delegate
             {
-
+                Intent plannenMenuActivity = new Intent(this, typeof(PlannenMenuActivity));
+                this.StartActivity(plannenMenuActivity);
             };
 
             veiligheidBtn.Click += delegate

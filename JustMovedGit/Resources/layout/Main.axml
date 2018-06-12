@@ -6,6 +6,41 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="#ffffffff">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:id="@+id/linearLayout7"
+        android:background="#092B5B">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_height="150px"
+            android:layout_width="150px"
+            android:layout_marginLeft="25px"
+            android:id="@+id/userMenu" />
+        <TextView
+            android:text="Just Moved"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="35px"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50px"
+            android:layout_width="300px"
+            android:layout_marginLeft="50px"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBudget"
+            android:fontFamily="@drawable/logoFont" />
+        <ImageButton
+            android:src="@drawable/user"
+            android:layout_width="130px"
+            android:layout_height="130px"
+            android:layout_marginTop="10px"
+            android:layout_marginLeft="60px"
+            android:id="@+id/userButton"
+            android:scaleType="fitCenter"
+            android:background="#092B5B" />
+    </LinearLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,8 +61,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/budget"
                 android:id="@+id/budgetBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Budget"
@@ -50,8 +85,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/huishouden"
                 android:id="@+id/huishoudenBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Huishouden"
@@ -74,8 +109,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/food"
                 android:id="@+id/receptBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Recepten"
@@ -98,8 +133,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/ehbo"
                 android:id="@+id/veiligheidBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Ehbo"
@@ -122,8 +157,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/planning"
                 android:id="@+id/plannenBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Planning"
@@ -146,8 +181,8 @@
                 android:layout_width="280px"
                 android:src="@drawable/favorieten"
                 android:id="@+id/favorietenBtn"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />
             <TextView
                 android:text="Favorieten"

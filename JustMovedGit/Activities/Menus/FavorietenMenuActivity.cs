@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace JustMovedGit.Activities
 {
-    [Activity(Label = "FavorietenActivity")]
+    [Activity(Label = "FavorietenActivity", Theme = "@android:style/Theme.NoTitleBar")]
     public class FavorietenMenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

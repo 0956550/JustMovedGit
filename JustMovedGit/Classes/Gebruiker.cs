@@ -12,11 +12,7 @@ using Android.Widget;
 
 namespace JustMovedGit.Classes
 {
-    class Plannen
+    class Gebruiker
     {
-        public string id { get; set; }
-        public string favorite { get; set; }
-        public string tip { get; set; }
-        public string titel { get; set; }
     }
 }
