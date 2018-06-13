@@ -22,48 +22,61 @@ namespace JustMovedGit.Models
         public LoginModel()
         {
             this.conn = new SQLiteConnection(DbHandler.GetLocalFilePath("JustMovedDb.sqlite"));
-            this.gebruikers = conn.Query<Gebruiker>("SELECT * FROM gebruiker")
+            gebruikers = conn.Query<Gebruiker>("SELECT * FROM gebruiker")
                 .ToList();
         }
+
         public Boolean checkIfAccountExists(string gebruikersNaam, string wachtwoord)
         {
-            foreach(Gebruiker item in this.gebruikers)
+            gebruikers = conn.Query<Gebruiker>("SELECT * FROM gebruiker")
+                .ToList();
+
+            foreach (Gebruiker item in gebruikers)
             {
                 if(gebruikersNaam.Equals(item.gebruikersnaam))
                 {
-                    
+                    Console.WriteLine(item.id);
                     return true;
-                }
-                else
-                {
-                    return false;
                 }
             }
             return false;
         }
+
         public Boolean createAccount(string gebruikersNaam, string wachtwoord)
         {
-            int id = 0;
+            int id = 1;
 
-            foreach(Gebruiker item in this.gebruikers)
+            foreach (Gebruiker item in gebruikers)
             {
-                if(Int32.Parse(item.id) > id)
+                if (id != Int32.Parse(item.id))
                 {
-                    id++;
+                    Gebruiker newGebruiker = new Gebruiker(id.ToString(), gebruikersNaam, wachtwoord);
+                    conn.Insert(newGebruiker);
+                    return true;
                 }
-                else
+
+                else if (id == Int32.Parse(item.id))
+                {
+                    id++;  
+                }
+            }
+            foreach (Gebruiker item in gebruikers)
+            {
+                if (id != Int32.Parse(item.id))
                 {
                     Gebruiker newGebruiker = new Gebruiker(id.ToString(), gebruikersNaam, wachtwoord);
                     conn.Insert(newGebruiker);
                     return true;
                 }
             }
+            Console.WriteLine(id);
             return false;
         }
+
         public Gebruiker credentialCheck(string gebruikersNaam, string wachtwoord)
         {
 
-            foreach(Gebruiker Item in this.gebruikers)
+            foreach (Gebruiker Item in gebruikers)
             {
                 if(gebruikersNaam.Equals(Item.gebruikersnaam) && wachtwoord.Equals(Item.wachtwoord))
                 {
@@ -80,6 +93,7 @@ namespace JustMovedGit.Models
             }
             return null;
         }
+
         private string errorHandler(int switchId)
         {
             switch(switchId)
