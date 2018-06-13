@@ -46,7 +46,8 @@ namespace JustMovedGit
 
             huishoudenBtn.Click += delegate
             {
-
+                Intent huishoudenMenuActivity = new Intent(this, typeof(HuishoudenMenuActivity));
+                this.StartActivity(huishoudenMenuActivity);
             };
 
             plannenBtn.Click += delegate

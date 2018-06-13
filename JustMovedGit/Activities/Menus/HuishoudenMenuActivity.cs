@@ -28,7 +28,7 @@ namespace JustMovedGit.Activities
                 ListView huishoudenMenu = FindViewById<ListView>(Resource.Id.ListView);
                 LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
                 List<Huishouden> huishouden = model.GetAllData();
-                HuishoudenAdapter adapter = new HuishoudenAdapter(this, huishouden, Resource.Layout.OtherMenuListview);
+                HuishoudenAdapter adapter = new HuishoudenAdapter(this, huishouden, Resource.Layout.ReceptMenuListview);
                 huishoudenMenu.Adapter = adapter;
                 EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
 

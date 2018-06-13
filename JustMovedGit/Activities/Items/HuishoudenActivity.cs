@@ -36,10 +36,6 @@ namespace JustMovedGit.Activities.Items
             benodigdheden.Text = hetHuishouden.benodigdheden;
             handeling.Text = hetHuishouden.handeling;
 
-            favorieten.Click += delegate
-            {
-                Console.WriteLine(model.setFavorite(id));
-            };
         }
     }
 }
