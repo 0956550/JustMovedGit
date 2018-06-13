@@ -14,5 +14,19 @@ namespace JustMovedGit.Classes
 {
     class Gebruiker
     {
+        public string id { get; set; }
+        public string gebruikersnaam { get; set; }
+        public string wachtwoord { get; set; }
+
+        public Gebruiker(string Id, string Gebruikersnaam, string Wachtwoord)
+        {
+            id = Id;
+            gebruikersnaam = Gebruikersnaam;
+            wachtwoord = Wachtwoord;
+        }
+        public Gebruiker()
+        {
+
+        }
     }
 }

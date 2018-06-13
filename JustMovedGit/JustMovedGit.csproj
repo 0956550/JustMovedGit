@@ -87,12 +87,14 @@
     <Compile Include="Adapters\PlannenAdapter.cs" />
     <Compile Include="Adapters\ReceptenAdapter.cs" />
     <Compile Include="Classes\Budget.cs" />
+    <Compile Include="Classes\Gebruiker.cs" />
     <Compile Include="Classes\Huishouden.cs" />
     <Compile Include="Classes\Plannen.cs" />
     <Compile Include="Classes\Recept.cs" />
     <Compile Include="Classes\Veiligheid.cs" />
     <Compile Include="DbHandler.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PlannenModel.cs" />
     <Compile Include="Models\ReceptModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
