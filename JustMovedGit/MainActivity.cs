@@ -14,7 +14,7 @@ namespace JustMovedGit
     [Activity(Label = "JustMovedGit", MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
     public class MainActivity : Activity
     {
-        
+        string userId = null;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -34,7 +34,8 @@ namespace JustMovedGit
             userBtn.Click += delegate
             {
                 Intent inlogActivity = new Intent(this, typeof(InlogActivity));
-                this.StartActivity(inlogActivity);
+                StartActivityForResult(inlogActivity, 0);
+                //this.StartActivity(inlogActivity);
             };
 
             budgetBtn.Click += delegate
@@ -69,9 +70,14 @@ namespace JustMovedGit
 
             };
         }
-        public static void SetTitleIcon()
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode == Result.Ok)
+            {
+                string stringRetFromResult = data.GetStringExtra("userId");
+                userId = stringRetFromResult;
+            }
         }
     }
 }

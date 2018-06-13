@@ -75,33 +75,15 @@ namespace JustMovedGit.Models
 
         public Gebruiker credentialCheck(string gebruikersNaam, string wachtwoord)
         {
+            gebruikers = conn.Query<Gebruiker>("SELECT * FROM gebruiker")
+                .ToList();
 
             foreach (Gebruiker Item in gebruikers)
             {
-                if(gebruikersNaam.Equals(Item.gebruikersnaam) && wachtwoord.Equals(Item.wachtwoord))
+                if((gebruikersNaam.Equals(Item.gebruikersnaam)) && (wachtwoord.Equals(Item.wachtwoord)))
                 {
                     return Item;
                 }
-                else if(gebruikersNaam.Equals(Item.gebruikersnaam) && !wachtwoord.Equals(Item.wachtwoord))
-                {
-                    errorHandler(1);
-                }
-                else if (!gebruikersNaam.Equals(Item.gebruikersnaam) && !wachtwoord.Equals(Item.wachtwoord))
-                {
-                    errorHandler(2);
-                }
-            }
-            return null;
-        }
-
-        private string errorHandler(int switchId)
-        {
-            switch(switchId)
-            {
-                case 1:
-                    return "Wachtwoord is onjuist.";
-                case 2:
-                    return "Deze gebruiker bestaat niet check of alle ingevoerde waardes correct zijn.";
             }
             return null;
         }

@@ -18,6 +18,7 @@ namespace JustMovedGit.Activities.Menus
     public class InlogActivity : Activity
     {
         LoginModel model = new LoginModel();
+        Gebruiker gebruiker;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,12 +33,33 @@ namespace JustMovedGit.Activities.Menus
             passwordEditText.InputType = Android.Text.InputTypes.TextVariationPassword |
                           Android.Text.InputTypes.ClassText;
 
-            string loginNaam = accountEditText.Text;
-            string wachtwoord = passwordEditText.Text;
-
+            //string loginNaam = accountEditText.Text;
+            //string wachtwoord = passwordEditText.Text;
             logInButton.Click += delegate
             {
-
+                if(string.IsNullOrEmpty(accountEditText.Text))
+                {
+                    messageHandler(4);
+                }
+                else if(string.IsNullOrEmpty(passwordEditText.Text))
+                {
+                    messageHandler(5);
+                }
+                else
+                {
+                    gebruiker = model.credentialCheck(accountEditText.Text, passwordEditText.Text);
+                    if(gebruiker == null)
+                    {
+                        messageHandler(6);
+                    }
+                    else
+                    {
+                        Intent myIntent = new Intent(this, typeof(MainActivity));
+                        myIntent.PutExtra("userId", gebruiker.id.ToString());
+                        SetResult(Result.Ok, myIntent);
+                        Finish();
+                    }
+                }
             };
 
             createAccountButton.Click += delegate
@@ -101,6 +123,42 @@ namespace JustMovedGit.Activities.Menus
                             passwordEditText.Text = "";
                         });
                         alert3.Show();
+                        break;
+                    case 4:
+                        Android.App.AlertDialog.Builder popupMessage4 = new AlertDialog.Builder(this);
+                        AlertDialog alert4 = popupMessage4.Create();
+                        alert4.SetTitle("Inloggen mislukt!");
+                        alert4.SetMessage("Account naam mag niet leeg zijn bij het inloggen.");
+                        alert4.SetButton("OK", (c, ev) =>
+                        {
+                            accountEditText.Text = "";
+                            passwordEditText.Text = "";
+                        });
+                        alert4.Show();
+                        break;
+                    case 5:
+                        Android.App.AlertDialog.Builder popupMessage5 = new AlertDialog.Builder(this);
+                        AlertDialog alert5 = popupMessage5.Create();
+                        alert5.SetTitle("Inloggen mislukt!");
+                        alert5.SetMessage("Wachtwoord mag niet leeg zijn.");
+                        alert5.SetButton("OK", (c, ev) =>
+                        {
+                            accountEditText.Text = "";
+                            passwordEditText.Text = "";
+                        });
+                        alert5.Show();
+                        break;
+                    case 6:
+                        Android.App.AlertDialog.Builder popupMessage6 = new AlertDialog.Builder(this);
+                        AlertDialog alert6 = popupMessage6.Create();
+                        alert6.SetTitle("Inloggen mislukt!");
+                        alert6.SetMessage("Het wachtwoord en/of gebruikersnaam is onjuist.");
+                        alert6.SetButton("OK", (c, ev) =>
+                        {
+                            accountEditText.Text = "";
+                            passwordEditText.Text = "";
+                        });
+                        alert6.Show();
                         break;
                 }
             }
