@@ -56,8 +56,9 @@ namespace JustMovedGit.Adapters
             }
 
             TextView txtTitel = row.FindViewById<TextView>(Resource.Id.txtTitel);
+            TextView txtCategorie = row.FindViewById<TextView>(Resource.Id.txtSubTitel);
             txtTitel.Text = huishouden[position].wat;
-
+            txtCategorie.Text = huishouden[position].categorie;
             return row;
         }
     }

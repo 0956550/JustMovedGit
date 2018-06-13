@@ -57,7 +57,8 @@ namespace JustMovedGit
 
             veiligheidBtn.Click += delegate
             {
-
+                Intent veiligheidMenuActivity = new Intent(this, typeof(VeiligheidMenuActivity));
+                this.StartActivity(veiligheidMenuActivity);
             };
 
             receptBtn.Click += delegate

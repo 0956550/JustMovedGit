@@ -45,12 +45,10 @@ namespace JustMovedGit.Activities
                 {
                     string query = searchBar.Text.ToLower();
                     List<Huishouden> searchHuishouden = model.GetSearchData(query);
-                    adapter = new HuishoudenAdapter(this, searchHuishouden, Resource.Layout.OtherMenuListview);
+                    adapter = new HuishoudenAdapter(this, searchHuishouden, Resource.Layout.ReceptMenuListview);
                     huishoudenMenu.Adapter = adapter;
                 };
             }
         }
-    }
-}
-    }
+    
 }
