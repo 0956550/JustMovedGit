@@ -14,9 +14,10 @@ namespace JustMovedGit.Classes
 {
     class Budget
     {
-        public string categorie { get; set; }
-        public string favorite { get; set; }
         public string id { get; set; }
-        public string omschrijving { get; set; }
+        public string titel { get; set; }
+        public string categorie { get; set; }
+        public string tip { get; set; }
+        public string favorite { get; set; }
     }
 }

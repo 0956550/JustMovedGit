@@ -103,7 +103,9 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Items\HuishoudenActivity.cs" />
     <Compile Include="Activities\Items\VeiligheidActivity.cs" />
+    <Compile Include="Activities\Items\BudgetActivity.cs" />
     <Compile Include="Activities\Items\PlannenActivity.cs" />
     <Compile Include="Activities\Items\ReceptenActivity.cs" />
     <Compile Include="Activities\Menus\BudgetMenuActivity.cs" />
@@ -113,7 +115,9 @@
     <Compile Include="Activities\Menus\PlannenMenuActivity.cs" />
     <Compile Include="Activities\Menus\ReceptenMenuActivity.cs" />
     <Compile Include="Activities\Menus\VeiligheidMenuActivity.cs" />
+    <Compile Include="Adapters\HuishoudenAdapter.cs" />
     <Compile Include="Adapters\VeiligheidAdapter.cs" />
+    <Compile Include="Adapters\BudgetAdapter.cs" />
     <Compile Include="Adapters\PlannenAdapter.cs" />
     <Compile Include="Adapters\ReceptenAdapter.cs" />
     <Compile Include="Classes\Budget.cs" />
@@ -125,7 +129,9 @@
     <Compile Include="DbHandler.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\HuishoudenModel.cs" />
     <Compile Include="Models\VeiligheidModel.cs" />
+    <Compile Include="Models\BudgetModel.cs" />
     <Compile Include="Models\PlannenModel.cs" />
     <Compile Include="Models\ReceptModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -196,6 +202,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BudgetView.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
