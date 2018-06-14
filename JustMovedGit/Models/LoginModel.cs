@@ -88,5 +88,14 @@ namespace JustMovedGit.Models
             }
             return null;
         }
+
+        public Gebruiker requestUser(string id)
+        {
+            gebruikers = conn.Query<Gebruiker>("SELECT * FROM gebruiker")
+                .Where(r => r.id.Equals(id))
+                .ToList();
+            Gebruiker gebruiker = gebruikers[0];
+            return gebruiker;
+        }
     }
 }

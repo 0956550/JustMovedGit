@@ -9,19 +9,29 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using JustMovedGit.Classes;
+using JustMovedGit.Models;
 
 namespace JustMovedGit.Activities.Items
 {
     [Activity(Label = "Recepten", Theme = "@android:style/Theme.NoTitleBar")]
     public class ReceptenActivity : Activity
     {
+        RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
+        LoginModel loginModel = new LoginModel();
+        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReceptView);
 
             string id = Intent.GetStringExtra("id");
+            string userId = Intent.GetStringExtra("userId");
             
+            Gebruiker gebruiker = loginModel.requestUser(userId);
+            Console.WriteLine(userId);
+
             TextView titel = FindViewById<TextView>(Resource.Id.txtReceptTitel);
             TextView beschrijving = FindViewById<TextView>(Resource.Id.txtReceptBeschrijving);
             TextView bereidingstijd = FindViewById<TextView>(Resource.Id.txtReceptBereidingstijd);
@@ -45,8 +55,42 @@ namespace JustMovedGit.Activities.Items
 
             favorieten.Click += delegate
             {
-                Console.WriteLine(model.setFavorite(id));
+                if(relatieReceptModel.setFavoriet(userId, id))
+                {
+                    messageHandler(1);
+                }
+                else
+                {
+                    relatieReceptModel.deleteFavoriet(userId, id);
+                    messageHandler(2);
+                }
             };
+
+            void messageHandler(int switchId)
+            {
+                switch (switchId)
+                {
+                    case 1:
+                        Android.App.AlertDialog.Builder popupMessage1 = new AlertDialog.Builder(this);
+                        AlertDialog alert1 = popupMessage1.Create();
+                        alert1.SetTitle("Favoriet toegevoegd!");
+                        alert1.SetMessage("Het recept is aan de favorieten toegevoegd van gebruiker " + gebruiker.gebruikersnaam + ".");
+                        alert1.SetButton("OK", (c, ev) =>
+                        {
+                        });
+                        alert1.Show();
+                        break;
+                    case 2:
+                        Android.App.AlertDialog.Builder popupMessage2 = new AlertDialog.Builder(this);
+                        AlertDialog alert2 = popupMessage2.Create();
+                        alert2.SetTitle("Favoriet verwijderd!");
+                        alert2.SetMessage("Het recept is uit de favorieten gehaald van gebruiker " + gebruiker.gebruikersnaam + ".");
+                        alert2.SetButton("OK", (c, ev) =>
+                        {});
+                        alert2.Show();
+                        break;
+                }
+            }
         }
     }
 }

@@ -65,6 +65,7 @@ namespace JustMovedGit
             receptBtn.Click += delegate
             {
                 Intent receptMenuActivity = new Intent(this, typeof(ReceptenMenuActivity));
+                receptMenuActivity.PutExtra("userId", userId);
                 this.StartActivity(receptMenuActivity);
             };
 

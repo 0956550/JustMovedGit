@@ -18,6 +18,9 @@ namespace JustMovedGit.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            string userId = Intent.GetStringExtra("userId");
+            Console.WriteLine(userId);
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
             ListView receptenMenu = FindViewById<ListView>(Resource.Id.ListView);
@@ -31,7 +34,9 @@ namespace JustMovedGit.Activities
             {
                 Intent receptActivity = new Intent(this, typeof(ReceptenActivity));
                 receptActivity.PutExtra("id", adapter.GetRecept(e.Position).id);
+                receptActivity.PutExtra("userId", userId);
                 this.StartActivity(receptActivity);
+                Console.WriteLine(userId);
             };
 
             searchBar.TextChanged += searchBar_TextChanged;

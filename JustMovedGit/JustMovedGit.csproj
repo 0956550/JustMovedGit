@@ -125,11 +125,13 @@
     <Compile Include="Classes\Huishouden.cs" />
     <Compile Include="Classes\Plannen.cs" />
     <Compile Include="Classes\Recept.cs" />
+    <Compile Include="Classes\Relatie_Recepten.cs" />
     <Compile Include="Classes\Veiligheid.cs" />
     <Compile Include="DbHandler.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\HuishoudenModel.cs" />
+    <Compile Include="Models\RelatieReceptModel.cs" />
     <Compile Include="Models\VeiligheidModel.cs" />
     <Compile Include="Models\BudgetModel.cs" />
     <Compile Include="Models\PlannenModel.cs" />

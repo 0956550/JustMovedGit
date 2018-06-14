@@ -33,8 +33,6 @@ namespace JustMovedGit.Activities.Menus
             passwordEditText.InputType = Android.Text.InputTypes.TextVariationPassword |
                           Android.Text.InputTypes.ClassText;
 
-            //string loginNaam = accountEditText.Text;
-            //string wachtwoord = passwordEditText.Text;
             logInButton.Click += delegate
             {
                 if(string.IsNullOrEmpty(accountEditText.Text))
