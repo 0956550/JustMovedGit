@@ -54,10 +54,7 @@ namespace JustMovedGit.Activities.Menus
                     }
                     else
                     {
-                        Intent myIntent = new Intent(this, typeof(MainActivity));
-                        myIntent.PutExtra("userId", gebruiker.id.ToString());
-                        SetResult(Result.Ok, myIntent);
-                        Finish();
+                        messageHandler(7);
                     }
                 }
             };
@@ -159,6 +156,23 @@ namespace JustMovedGit.Activities.Menus
                             passwordEditText.Text = "";
                         });
                         alert6.Show();
+                        break;
+                    case 7:
+                        Android.App.AlertDialog.Builder popupMessage7 = new AlertDialog.Builder(this);
+                        AlertDialog alert7 = popupMessage7.Create();
+                        alert7.SetTitle("Inloggen gelukt!");
+                        alert7.SetMessage("Door op ok te klikken zal u teruggaan naar het hoofdmenu.");
+                        alert7.SetButton("OK", (c, ev) =>
+                        {
+                            accountEditText.Text = "";
+                            passwordEditText.Text = "";
+                            Intent myIntent = new Intent(this, typeof(MainActivity));
+                            myIntent.PutExtra("userId", gebruiker.id.ToString());
+                            SetResult(Result.Ok, myIntent);
+                            Finish();
+                        });
+                        alert7.Show();
+          
                         break;
                 }
             }
