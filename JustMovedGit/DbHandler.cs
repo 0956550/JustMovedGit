@@ -27,7 +27,7 @@ namespace JustMovedGit
 
         private static void CopyDatabaseIfNotExists(string dbPath)
         {
-            if (File.Exists(dbPath))
+            if (!File.Exists(dbPath))
             {
                 using (BinaryReader br = new BinaryReader(Application.Context.Assets.Open("JustMovedDb.sqlite")))
                 {

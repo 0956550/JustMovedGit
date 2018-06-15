@@ -19,7 +19,6 @@ namespace JustMovedGit.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             string userId = Intent.GetStringExtra("userId");
-            Console.WriteLine(userId);
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
@@ -29,6 +28,7 @@ namespace JustMovedGit.Activities
             ReceptenAdapter adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
             receptenMenu.Adapter = adapter;
             EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
+            RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
 
             receptenMenu.ItemClick += (s, e) =>
             {
@@ -37,6 +37,12 @@ namespace JustMovedGit.Activities
                 receptActivity.PutExtra("userId", userId);
                 this.StartActivity(receptActivity);
                 Console.WriteLine(userId);
+                List<Relatie_Recepten> test = relatieReceptModel.getFavorieten();
+
+                foreach (Relatie_Recepten item in test)
+                {
+                    Console.WriteLine("kaas" + item.gebruiker_id + "\t" + item.recept_id);
+                }
             };
 
             searchBar.TextChanged += searchBar_TextChanged;

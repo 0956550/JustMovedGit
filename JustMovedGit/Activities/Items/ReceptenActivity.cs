@@ -17,20 +17,18 @@ namespace JustMovedGit.Activities.Items
     [Activity(Label = "Recepten", Theme = "@android:style/Theme.NoTitleBar")]
     public class ReceptenActivity : Activity
     {
-        RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
-        LoginModel loginModel = new LoginModel();
         
+        LoginModel loginModel = new LoginModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ReceptView);
-
+            RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
             string id = Intent.GetStringExtra("id");
             string userId = Intent.GetStringExtra("userId");
             
             Gebruiker gebruiker = loginModel.requestUser(userId);
-            Console.WriteLine(userId);
 
             TextView titel = FindViewById<TextView>(Resource.Id.txtReceptTitel);
             TextView beschrijving = FindViewById<TextView>(Resource.Id.txtReceptBeschrijving);
@@ -55,14 +53,15 @@ namespace JustMovedGit.Activities.Items
 
             favorieten.Click += delegate
             {
-                if(relatieReceptModel.setFavoriet(userId, id))
-                {
-                    messageHandler(1);
-                }
-                else
+                if(relatieReceptModel.checkIfExists(userId, id))
                 {
                     relatieReceptModel.deleteFavoriet(userId, id);
                     messageHandler(2);
+                }
+                else
+                {
+                    relatieReceptModel.setFavoriet(userId, id);
+                    messageHandler(1);
                 }
             };
 
@@ -76,8 +75,7 @@ namespace JustMovedGit.Activities.Items
                         alert1.SetTitle("Favoriet toegevoegd!");
                         alert1.SetMessage("Het recept is aan de favorieten toegevoegd van gebruiker " + gebruiker.gebruikersnaam + ".");
                         alert1.SetButton("OK", (c, ev) =>
-                        {
-                        });
+                        {});
                         alert1.Show();
                         break;
                     case 2:
@@ -86,7 +84,13 @@ namespace JustMovedGit.Activities.Items
                         alert2.SetTitle("Favoriet verwijderd!");
                         alert2.SetMessage("Het recept is uit de favorieten gehaald van gebruiker " + gebruiker.gebruikersnaam + ".");
                         alert2.SetButton("OK", (c, ev) =>
-                        {});
+                        {
+                            List<Relatie_Recepten> recepten = relatieReceptModel.getFavorieten();
+                            foreach (Relatie_Recepten item in recepten)
+                            {
+                                Console.WriteLine("test" + item.gebruiker_id + "\t" + item.recept_id);
+                            }
+                        });
                         alert2.Show();
                         break;
                 }
