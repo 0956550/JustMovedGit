@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingTop="50px"
+    android:paddingLeft="30px"
+    android:paddingRight="30px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Budget over voor deze maand:"
+            android:textSize="65px"
+            android:layout_width="580px"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBudgetOver"
+            android:textColor="#092B5B" />
+        <ImageButton
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:src="@drawable/plus"
+            android:scaleType="fitCenter"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/plusbudgetbtn" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+        <TextView
+            android:text="€"
+            android:textSize="80px"
+            android:textAlignment="left"
+            android:gravity="bottom"
+            android:layout_width="60px"
+            android:layout_height="match_parent"
+            android:textColor="#092B5B"
+            android:id="@+id/Eurotxt" />
+        <TextView
+            android:text=""
+            android:textSize="80px"
+            android:textAlignment="center"
+            android:gravity="bottom"
+            android:layout_width="600px"
+            android:layout_height="match_parent"
+            android:textColor="#5C5F68"
+            android:id="@+id/BudgetOvertxt" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:layout_marginBottom="25px"
+        android:background="#092B5B"
+        android:id="@+id/view1" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="580px"
+        android:id="@+id/scrollViewBudgetMeter">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+    </ScrollView>
+    <Button
+        android:text="Begin nieuwe maand"
+        android:background="#092B5B"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="25px"
+        android:id="@+id/kostenpostbtn" />
+</LinearLayout>
