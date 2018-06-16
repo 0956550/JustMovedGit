@@ -117,6 +117,7 @@
     <Compile Include="Activities\Menus\ReceptenMenuActivity.cs" />
     <Compile Include="Activities\Menus\VeiligheidMenuActivity.cs" />
     <Compile Include="Adapters\HuishoudenAdapter.cs" />
+    <Compile Include="Adapters\KostenAdapter.cs" />
     <Compile Include="Adapters\VeiligheidAdapter.cs" />
     <Compile Include="Adapters\BudgetAdapter.cs" />
     <Compile Include="Adapters\PlannenAdapter.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Classes\Gebruiker.cs" />
     <Compile Include="Classes\Huishouden.cs" />
     <Compile Include="Classes\Plannen.cs" />
+    <Compile Include="Classes\Kosten.cs" />
     <Compile Include="Classes\Recept.cs" />
     <Compile Include="Classes\Relatie_Recepten.cs" />
     <Compile Include="Classes\Veiligheid.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\HuishoudenModel.cs" />
+    <Compile Include="Models\KostenModel.cs" />
     <Compile Include="Models\RelatieReceptModel.cs" />
     <Compile Include="Models\VeiligheidModel.cs" />
     <Compile Include="Models\BudgetModel.cs" />
