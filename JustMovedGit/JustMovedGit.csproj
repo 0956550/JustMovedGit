@@ -108,6 +108,7 @@
     <Compile Include="Activities\Items\BudgetActivity.cs" />
     <Compile Include="Activities\Items\PlannenActivity.cs" />
     <Compile Include="Activities\Items\ReceptenActivity.cs" />
+    <Compile Include="Activities\Menus\BudgetSelectorActivity.cs" />
     <Compile Include="Activities\Menus\BudgetMenuActivity.cs" />
     <Compile Include="Activities\Menus\FavorietenMenuActivity.cs" />
     <Compile Include="Activities\Menus\HuishoudenMenuActivity.cs" />
@@ -243,6 +244,15 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\BudgetSelectMenu.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\budgetPlanner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

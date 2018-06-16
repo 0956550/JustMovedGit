@@ -40,8 +40,8 @@ namespace JustMovedGit
 
             budgetBtn.Click += delegate
             {
-                Intent budgetMenuActivity = new Intent(this, typeof(BudgetMenuActivity));
-                this.StartActivity(budgetMenuActivity);
+                Intent BudgetSelectorActivity = new Intent(this, typeof(BudgetSelectorActivity));
+                this.StartActivity(BudgetSelectorActivity);
             };
 
             huishoudenBtn.Click += delegate
@@ -65,7 +65,6 @@ namespace JustMovedGit
             receptBtn.Click += delegate
             {
                 Intent receptMenuActivity = new Intent(this, typeof(ReceptenMenuActivity));
-                receptMenuActivity.PutExtra("userId", userId);
                 this.StartActivity(receptMenuActivity);
             };
 
