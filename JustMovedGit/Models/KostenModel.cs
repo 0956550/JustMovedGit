@@ -26,6 +26,20 @@ namespace JustMovedGit.Models
                 .ToList();
         }
 
+        public List<Kosten> GetAllData()
+        {
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten")
+                .ToList();
+            return kosten;
+        }
+        public List<Kosten> GetAllKosten(string userId)
+        {
+
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id = "+userId)
+                .ToList();
+                return kosten;
+        }
+
         public Boolean createKosten(string kosten, string beschrijving)
         {
             int kosten_id = 1;
