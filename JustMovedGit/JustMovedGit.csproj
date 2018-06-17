@@ -104,16 +104,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\Items\HuishoudenActivity.cs" />
+    <Compile Include="Activities\Items\KostenActivity.cs" />
     <Compile Include="Activities\Items\VeiligheidActivity.cs" />
     <Compile Include="Activities\Items\BudgetActivity.cs" />
     <Compile Include="Activities\Items\PlannenActivity.cs" />
     <Compile Include="Activities\Items\ReceptenActivity.cs" />
+    <Compile Include="Activities\Items\BudgettoinputActivity.cs" />
     <Compile Include="Activities\Menus\BudgetSelectorActivity.cs" />
     <Compile Include="Activities\Menus\BudgetMenuActivity.cs" />
     <Compile Include="Activities\Menus\HuishoudenMenuActivity.cs" />
     <Compile Include="Activities\Menus\InlogActivity.cs" />
     <Compile Include="Activities\Menus\PlannenMenuActivity.cs" />
     <Compile Include="Activities\Menus\FavorietenMenuActivity.cs" />
+    <Compile Include="Activities\Menus\BudgetMeterMenuActivity.cs" />
     <Compile Include="Activities\Menus\ReceptenMenuActivity.cs" />
     <Compile Include="Activities\Menus\VeiligheidMenuActivity.cs" />
     <Compile Include="Adapters\HuishoudenAdapter.cs" />
