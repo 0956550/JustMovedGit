@@ -15,6 +15,7 @@ namespace JustMovedGit
     public class MainActivity : Activity
     {
         string userId = null;
+        string isFavoriteOption = "0";
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -47,30 +48,51 @@ namespace JustMovedGit
             huishoudenBtn.Click += delegate
             {
                 Intent huishoudenMenuActivity = new Intent(this, typeof(HuishoudenMenuActivity));
+                huishoudenMenuActivity.PutExtra("userId", userId);
+                huishoudenMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(huishoudenMenuActivity);
             };
 
             plannenBtn.Click += delegate
             {
                 Intent plannenMenuActivity = new Intent(this, typeof(PlannenMenuActivity));
+                plannenMenuActivity.PutExtra("userId", userId);
                 this.StartActivity(plannenMenuActivity);
             };
 
             veiligheidBtn.Click += delegate
             {
                 Intent veiligheidMenuActivity = new Intent(this, typeof(VeiligheidMenuActivity));
+                veiligheidMenuActivity.PutExtra("userId", userId);
                 this.StartActivity(veiligheidMenuActivity);
             };
 
             receptBtn.Click += delegate
             {
                 Intent receptMenuActivity = new Intent(this, typeof(ReceptenMenuActivity));
+                receptMenuActivity.PutExtra("userId", userId);
+                receptMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(receptMenuActivity);
             };
 
             favorietenBtn.Click += delegate
             {
-
+                if(string.IsNullOrEmpty(userId))
+                {
+                    Android.App.AlertDialog.Builder popupMessage1 = new AlertDialog.Builder(this);
+                    AlertDialog alert1 = popupMessage1.Create();
+                    alert1.SetTitle("Favorieten menu openen mislukt!");
+                    alert1.SetMessage("U moet ingelogd zijn om gebruik te maken van deze functie.");
+                    alert1.SetButton("OK", (c, ev) =>
+                    { });
+                    alert1.Show();
+                }
+                else
+                {
+                    Intent favorietenMenuActivity = new Intent(this, typeof(FavorietenMenuActivity));
+                    favorietenMenuActivity.PutExtra("userId", userId);
+                    this.StartActivity(favorietenMenuActivity);
+                }
             };
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

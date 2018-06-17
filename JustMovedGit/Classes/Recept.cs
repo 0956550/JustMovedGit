@@ -17,7 +17,6 @@ namespace JustMovedGit.Classes
         public string bereidingstijd { get; set; }
         public string bereidingswijze { get; set; }
         public string beschrijving { get; set; }
-        public string favorite { get; set; }
         public string id { get; set; }
         public string ingredienten { get; set; }
         public string kosten { get; set; }

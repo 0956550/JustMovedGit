@@ -26,6 +26,7 @@ namespace JustMovedGit.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
+            string userId = Intent.GetStringExtra("userId");
             ListView plannenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
             List<Plannen> plannen = model.GetAllData();
@@ -37,6 +38,7 @@ namespace JustMovedGit.Activities
             {
                 Intent plannenActivity = new Intent(this, typeof(PlannenActivity));
                 plannenActivity.PutExtra("id", adapter.GetPlannen(e.Position).id);
+                plannenActivity.PutExtra("userId", userId);
                 this.StartActivity(plannenActivity);
             };
 

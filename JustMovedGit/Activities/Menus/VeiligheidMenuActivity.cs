@@ -24,6 +24,8 @@ namespace JustMovedGit.Activities
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            string userId = Intent.GetStringExtra("userId");
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
             ListView veiligheidMenu = FindViewById<ListView>(Resource.Id.ListView);
@@ -37,6 +39,7 @@ namespace JustMovedGit.Activities
             {
                 Intent veiligheidActivity = new Intent(this, typeof(VeiligheidActivity));
                 veiligheidActivity.PutExtra("id", adapter.GetVeiligheid(e.Position).id);
+                veiligheidActivity.PutExtra("userId", userId);
                 this.StartActivity(veiligheidActivity);
             };
 

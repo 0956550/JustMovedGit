@@ -24,6 +24,10 @@ namespace JustMovedGit.Activities
             protected override void OnCreate(Bundle savedInstanceState)
             {
                 base.OnCreate(savedInstanceState);
+
+                string userId = Intent.GetStringExtra("userId");
+                string isFavoriteOption = Intent.GetStringExtra("isFavoriteOption");
+
                 SetContentView(Resource.Layout.MenuView);
                 ListView huishoudenMenu = FindViewById<ListView>(Resource.Id.ListView);
                 LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
@@ -36,6 +40,7 @@ namespace JustMovedGit.Activities
                 {
                     Intent huishoudenActivity = new Intent(this, typeof(HuishoudenActivity));
                     huishoudenActivity.PutExtra("id", adapter.GetHuishouden(e.Position).id);
+                    huishoudenActivity.PutExtra("userId", userId);
                     this.StartActivity(huishoudenActivity);
                 };
 

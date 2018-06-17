@@ -27,8 +27,6 @@ namespace JustMovedGit.Activities.Items
             RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
             string id = Intent.GetStringExtra("id");
             string userId = Intent.GetStringExtra("userId");
-            
-            Gebruiker gebruiker = loginModel.requestUser(userId);
 
             TextView titel = FindViewById<TextView>(Resource.Id.txtReceptTitel);
             TextView beschrijving = FindViewById<TextView>(Resource.Id.txtReceptBeschrijving);
@@ -40,32 +38,38 @@ namespace JustMovedGit.Activities.Items
             ImageButton favorieten = FindViewById<ImageButton>(Resource.Id.favorietenReceptBtn);
 
             Models.ReceptModel model = new Models.ReceptModel();
-            List<Classes.Recept> recept = model.GetSingleData(id);
-            Classes.Recept hetRecept = recept[0];
+            Recept recept = model.GetSingleData(id);
 
-            titel.Text = hetRecept.naam;
-            beschrijving.Text = hetRecept.beschrijving;
-            bereidingstijd.Text = hetRecept.bereidingstijd;
-            ingredienten.Text = hetRecept.ingredienten;
-            voorbereiding.Text = hetRecept.voorbereiding;
-            bereidingswijze.Text = hetRecept.bereidingswijze;
-            kosten.Text = hetRecept.kosten;
+            titel.Text = recept.naam;
+            beschrijving.Text = recept.beschrijving;
+            bereidingstijd.Text = recept.bereidingstijd;
+            ingredienten.Text = recept.ingredienten;
+            voorbereiding.Text = recept.voorbereiding;
+            bereidingswijze.Text = recept.bereidingswijze;
+            kosten.Text = recept.kosten;
 
             favorieten.Click += delegate
             {
-                if(relatieReceptModel.checkIfExists(userId, id))
+                if (string.IsNullOrEmpty(userId))
                 {
-                    relatieReceptModel.deleteFavoriet(userId, id);
-                    messageHandler(2);
+                    messageHandler(3, null);
                 }
                 else
                 {
-                    relatieReceptModel.setFavoriet(userId, id);
-                    messageHandler(1);
+                    if (relatieReceptModel.checkIfExists(userId, id))
+                    {
+                        relatieReceptModel.deleteFavoriet(userId, id);
+                        messageHandler(2, loginModel.requestUser(userId));
+                    }
+                    else
+                    {
+                        relatieReceptModel.setFavoriet(userId, id);
+                        messageHandler(1, loginModel.requestUser(userId));
+                    }
                 }
             };
 
-            void messageHandler(int switchId)
+            void messageHandler(int switchId, Gebruiker gebruiker)
             {
                 switch (switchId)
                 {
@@ -84,14 +88,17 @@ namespace JustMovedGit.Activities.Items
                         alert2.SetTitle("Favoriet verwijderd!");
                         alert2.SetMessage("Het recept is uit de favorieten gehaald van gebruiker " + gebruiker.gebruikersnaam + ".");
                         alert2.SetButton("OK", (c, ev) =>
-                        {
-                            List<Relatie_Recepten> recepten = relatieReceptModel.getFavorieten();
-                            foreach (Relatie_Recepten item in recepten)
-                            {
-                                Console.WriteLine("test" + item.gebruiker_id + "\t" + item.recept_id);
-                            }
-                        });
+                        {});
                         alert2.Show();
+                        break;
+                    case 3:
+                        Android.App.AlertDialog.Builder popupMessage3 = new AlertDialog.Builder(this);
+                        AlertDialog alert3 = popupMessage3.Create();
+                        alert3.SetTitle("Favoriet toevoegen mislukt!");
+                        alert3.SetMessage("U moet ingelogd zijn om gebruik te maken van deze functie.");
+                        alert3.SetButton("OK", (c, ev) =>
+                        { });
+                        alert3.Show();
                         break;
                 }
             }
