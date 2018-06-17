@@ -110,10 +110,10 @@
     <Compile Include="Activities\Items\ReceptenActivity.cs" />
     <Compile Include="Activities\Menus\BudgetSelectorActivity.cs" />
     <Compile Include="Activities\Menus\BudgetMenuActivity.cs" />
-    <Compile Include="Activities\Menus\FavorietenMenuActivity.cs" />
     <Compile Include="Activities\Menus\HuishoudenMenuActivity.cs" />
     <Compile Include="Activities\Menus\InlogActivity.cs" />
     <Compile Include="Activities\Menus\PlannenMenuActivity.cs" />
+    <Compile Include="Activities\Menus\FavorietenMenuActivity.cs" />
     <Compile Include="Activities\Menus\ReceptenMenuActivity.cs" />
     <Compile Include="Activities\Menus\VeiligheidMenuActivity.cs" />
     <Compile Include="Adapters\HuishoudenAdapter.cs" />
@@ -128,6 +128,9 @@
     <Compile Include="Classes\Plannen.cs" />
     <Compile Include="Classes\Kosten.cs" />
     <Compile Include="Classes\Recept.cs" />
+    <Compile Include="Classes\Relatie_Huishouden.cs" />
+    <Compile Include="Classes\Relatie_Veiligheid.cs" />
+    <Compile Include="Classes\Relatie_Plannen.cs" />
     <Compile Include="Classes\Relatie_Recepten.cs" />
     <Compile Include="Classes\Veiligheid.cs" />
     <Compile Include="DbHandler.cs" />
@@ -135,6 +138,9 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\HuishoudenModel.cs" />
     <Compile Include="Models\KostenModel.cs" />
+    <Compile Include="Models\RelatieHuishoudenModel.cs" />
+    <Compile Include="Models\RelatieVeiligheidModel.cs" />
+    <Compile Include="Models\RelatiePlannenModel.cs" />
     <Compile Include="Models\RelatieReceptModel.cs" />
     <Compile Include="Models\VeiligheidModel.cs" />
     <Compile Include="Models\BudgetModel.cs" />
@@ -166,6 +172,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\logoFont.ttf" />
     <AndroidResource Include="Resources\layout\UserMenu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FavorietenMenuView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

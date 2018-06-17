@@ -18,7 +18,6 @@ namespace JustMovedGit.Models
     {
 
         private SQLiteConnection conn;
-        //private List<Relatie_Recepten> receptFavorieten;
 
         public RelatieReceptModel()
         {
@@ -55,11 +54,22 @@ namespace JustMovedGit.Models
             conn.Query<Relatie_Recepten>("DELETE FROM relatie_recepten WHERE gebruiker_id = " + userId + " AND recept_id = " + receptId);
         }
 
-        public List<Relatie_Recepten> getFavorieten()
+        public List<Recept> getFavorieten(string userId)
         {
-            List<Relatie_Recepten> receptFavorieten = conn.Query<Relatie_Recepten>("SELECT * FROM relatie_recepten")
+            ReceptModel model = new ReceptModel();
+
+            List<Relatie_Recepten> relatieReceptFavorieten = conn.Query<Relatie_Recepten>("SElECT * FROM relatie_recepten WHERE gebruiker_id = " + userId)
                 .ToList();
+
+            List<Recept> receptFavorieten = new List<Recept>();
+
+            foreach(Relatie_Recepten item in relatieReceptFavorieten)
+            {
+                receptFavorieten.Add(model.GetSingleData(item.recept_id));
+            }
+
             return receptFavorieten;
         }
+
     }
 }

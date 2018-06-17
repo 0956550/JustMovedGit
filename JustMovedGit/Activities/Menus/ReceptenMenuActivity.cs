@@ -15,20 +15,36 @@ namespace JustMovedGit.Activities
     public class ReceptenMenuActivity : Activity
     {
         private ReceptModel model = new ReceptModel();
+       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             string userId = Intent.GetStringExtra("userId");
+            string isFavoriteOption = Intent.GetStringExtra("isFavoriteOption");
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
+            RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
             ListView receptenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-            List<Recept> recepten = model.GetAllData();
-            ReceptenAdapter adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
-            receptenMenu.Adapter = adapter;
+
+            ReceptenAdapter adapter;
+
+            if (isFavoriteOption.Equals("1"))
+            {
+                List<Recept> recepten = relatieReceptModel.getFavorieten(userId);
+                adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
+                receptenMenu.Adapter = adapter;
+            }
+            else
+            {
+                List<Recept> recepten = model.GetAllData();
+                adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
+                receptenMenu.Adapter = adapter;
+            }
+
+            
             EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
-            RelatieReceptModel relatieReceptModel = new RelatieReceptModel();
 
             receptenMenu.ItemClick += (s, e) =>
             {
@@ -36,13 +52,6 @@ namespace JustMovedGit.Activities
                 receptActivity.PutExtra("id", adapter.GetRecept(e.Position).id);
                 receptActivity.PutExtra("userId", userId);
                 this.StartActivity(receptActivity);
-                Console.WriteLine(userId);
-                List<Relatie_Recepten> test = relatieReceptModel.getFavorieten();
-
-                foreach (Relatie_Recepten item in test)
-                {
-                    Console.WriteLine("kaas" + item.gebruiker_id + "\t" + item.recept_id);
-                }
             };
 
             searchBar.TextChanged += searchBar_TextChanged;
@@ -50,8 +59,8 @@ namespace JustMovedGit.Activities
             void searchBar_TextChanged(object sender, EventArgs e)
             {
                 string query = searchBar.Text.ToLower();
-                List<Recept>searchReceopten = model.GetSearchData(query);
-                adapter = new ReceptenAdapter(this, searchReceopten, Resource.Layout.ReceptMenuListview);
+                List<Recept>searchRecepten = model.GetSearchData(query);
+                adapter = new ReceptenAdapter(this, searchRecepten, Resource.Layout.ReceptMenuListview);
                 receptenMenu.Adapter = adapter;
             };
         }
