@@ -22,7 +22,8 @@ namespace JustMovedGit
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
+            ImageButton budgetSelectorBtn = FindViewById<ImageButton>(Resource.Id.budgetSelectorBtn);
+         //   ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
             ImageButton huishoudenBtn = FindViewById<ImageButton>(Resource.Id.huishoudenBtn);
             ImageButton plannenBtn = FindViewById<ImageButton>(Resource.Id.plannenBtn);
             ImageButton veiligheidBtn = FindViewById<ImageButton>(Resource.Id.veiligheidBtn);
@@ -39,11 +40,13 @@ namespace JustMovedGit
                 //this.StartActivity(inlogActivity);
             };
 
-            budgetBtn.Click += delegate
+            budgetSelectorBtn.Click += delegate
             {
                 Intent BudgetSelectorActivity = new Intent(this, typeof(BudgetSelectorActivity));
                 this.StartActivity(BudgetSelectorActivity);
             };
+
+
 
             huishoudenBtn.Click += delegate
             {
