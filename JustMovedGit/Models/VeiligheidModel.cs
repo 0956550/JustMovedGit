@@ -38,25 +38,12 @@ namespace JustMovedGit.Models
             return veiligheid;
         }
 
-        public List<Veiligheid> GetSingleData(string id)
+        public Veiligheid GetSingleData(string id)
         {
             List<Veiligheid> veiligheid = conn.Query<Veiligheid>("SELECT * FROM veiligheid")
                 .Where(r => r.id.Equals(id))
                 .ToList();
-            return veiligheid;
-        }
-
-        public Boolean setFavorite(string id)
-        {
-            List<Veiligheid> recepten = conn.Query<Veiligheid>("UPDATE plannen SET favorite = 1 WHERE ID =" + id);
-            if (Int32.Parse(GetSingleData(id)[0].favorite) == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return veiligheid[0];
         }
     }
 }

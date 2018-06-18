@@ -34,13 +34,12 @@ namespace JustMovedGit.Activities.Items
             ImageButton favorieten = FindViewById<ImageButton>(Resource.Id.favorietenHuishoudenBtn);
 
             Models.HuishoudenModel model = new Models.HuishoudenModel();
-            List<Classes.Huishouden> huishouden = model.GetSingleData(id);
-            Classes.Huishouden hetHuishouden = huishouden[0];
+            Huishouden huishouden = model.GetSingleData(id);
 
-            titel.Text = hetHuishouden.wat;
-            categorie.Text = hetHuishouden.categorie;
-            benodigdheden.Text = hetHuishouden.benodigdheden;
-            handeling.Text = hetHuishouden.handeling;
+            titel.Text = huishouden.wat;
+            categorie.Text = huishouden.categorie;
+            benodigdheden.Text = huishouden.benodigdheden;
+            handeling.Text = huishouden.handeling;
 
             favorieten.Click += delegate
             {

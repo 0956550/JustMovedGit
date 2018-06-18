@@ -53,10 +53,20 @@ namespace JustMovedGit.Models
             conn.Query<Relatie_Huishouden>("DELETE FROM relatie_huishouden WHERE gebruiker_id = " + userId + " AND huishouden_id = " + huishoudenId);
         }
 
-        public List<Relatie_Huishouden> getFavorieten()
+        public List<Huishouden> getFavorieten(string userId)
         {
-            List<Relatie_Huishouden> huishoudenFavorieten = conn.Query<Relatie_Huishouden>("SELECT * FROM relatie_huishouden")
+            HuishoudenModel model = new HuishoudenModel();
+
+            List<Relatie_Huishouden> relatieHuishoudenFavorieten = conn.Query<Relatie_Huishouden>("SElECT * FROM relatie_huishouden WHERE gebruiker_id = " + userId)
                 .ToList();
+
+            List<Huishouden> huishoudenFavorieten = new List<Huishouden>();
+
+            foreach (Relatie_Huishouden item in relatieHuishoudenFavorieten)
+            {
+                huishoudenFavorieten.Add(model.GetSingleData(item.huishouden_id));
+            }
+
             return huishoudenFavorieten;
         }
     }

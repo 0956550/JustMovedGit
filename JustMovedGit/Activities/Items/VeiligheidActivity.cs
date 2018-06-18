@@ -34,11 +34,10 @@ namespace JustMovedGit.Activities.Items
             ImageButton favorieten = FindViewById<ImageButton>(Resource.Id.favorietenReceptBtn);
 
             Models.VeiligheidModel model = new Models.VeiligheidModel();
-            List<Classes.Veiligheid> veiligheid = model.GetSingleData(id);
-            Classes.Veiligheid deveiligheid = veiligheid[0];
+            Veiligheid veiligheid = model.GetSingleData(id);
 
-            titel.Text = deveiligheid.ongeval;
-            beschrijving.Text = deveiligheid.handeling;
+            titel.Text = veiligheid.ongeval;
+            beschrijving.Text = veiligheid.handeling;
 
             favorieten.Click += delegate
             {

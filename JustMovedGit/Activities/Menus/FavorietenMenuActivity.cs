@@ -49,6 +49,7 @@ namespace JustMovedGit.Activities
             {
                 Intent plannenMenuActivity = new Intent(this, typeof(PlannenMenuActivity));
                 plannenMenuActivity.PutExtra("userId", userId);
+                plannenMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(plannenMenuActivity);
             };
 
@@ -56,6 +57,7 @@ namespace JustMovedGit.Activities
             {
                 Intent veiligheidMenuActivity = new Intent(this, typeof(VeiligheidMenuActivity));
                 veiligheidMenuActivity.PutExtra("userId", userId);
+                veiligheidMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(veiligheidMenuActivity);
             };
 

@@ -25,15 +25,30 @@ namespace JustMovedGit.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             string userId = Intent.GetStringExtra("userId");
+            string isFavoriteOption = Intent.GetStringExtra("isFavoriteOption");
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
             ListView veiligheidMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-            List<Veiligheid> veiligheid = model.GetAllData();
-            VeiligheidAdapter adapter = new VeiligheidAdapter(this, veiligheid, Resource.Layout.OtherMenuListview);
-            veiligheidMenu.Adapter = adapter;
+            VeiligheidAdapter adapter;
+            RelatieVeiligheidModel relatieVeiligheidModel = new RelatieVeiligheidModel();
             EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
+
+            if (isFavoriteOption.Equals("1"))
+            {
+                List<Veiligheid> veiligheid = relatieVeiligheidModel.getFavorieten(userId);
+                adapter = new VeiligheidAdapter(this, veiligheid, Resource.Layout.OtherMenuListview);
+                veiligheidMenu.Adapter = adapter;
+
+                searchBar.Visibility = Android.Views.ViewStates.Invisible;
+            }
+            else
+            {
+                List<Veiligheid> veiligheid = model.GetAllData();
+                adapter = new VeiligheidAdapter(this, veiligheid, Resource.Layout.OtherMenuListview);
+                veiligheidMenu.Adapter = adapter;
+            }
 
             veiligheidMenu.ItemClick += (s, e) =>
             {

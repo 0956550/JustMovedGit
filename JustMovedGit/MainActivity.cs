@@ -36,7 +36,6 @@ namespace JustMovedGit
             {
                 Intent inlogActivity = new Intent(this, typeof(InlogActivity));
                 StartActivityForResult(inlogActivity, 0);
-                //this.StartActivity(inlogActivity);
             };
 
             budgetBtn.Click += delegate
@@ -57,6 +56,7 @@ namespace JustMovedGit
             {
                 Intent plannenMenuActivity = new Intent(this, typeof(PlannenMenuActivity));
                 plannenMenuActivity.PutExtra("userId", userId);
+                plannenMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(plannenMenuActivity);
             };
 
@@ -64,6 +64,7 @@ namespace JustMovedGit
             {
                 Intent veiligheidMenuActivity = new Intent(this, typeof(VeiligheidMenuActivity));
                 veiligheidMenuActivity.PutExtra("userId", userId);
+                veiligheidMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(veiligheidMenuActivity);
             };
 

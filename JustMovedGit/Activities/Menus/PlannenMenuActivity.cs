@@ -27,12 +27,28 @@ namespace JustMovedGit.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
             string userId = Intent.GetStringExtra("userId");
+            string isFavoriteOption = Intent.GetStringExtra("isFavoriteOption");
+
             ListView plannenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-            List<Plannen> plannen = model.GetAllData();
-            PlannenAdapter adapter = new PlannenAdapter(this, plannen, Resource.Layout.OtherMenuListview);
-            plannenMenu.Adapter = adapter;
+            PlannenAdapter adapter;
+            RelatiePlannenModel relatiePlannenModel = new RelatiePlannenModel();
             EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
+
+            if (isFavoriteOption.Equals("1"))
+            {
+                List<Plannen> plannen = relatiePlannenModel.getFavorieten(userId);
+                adapter = new PlannenAdapter(this, plannen, Resource.Layout.ReceptMenuListview);
+                plannenMenu.Adapter = adapter;
+
+                searchBar.Visibility = Android.Views.ViewStates.Invisible;
+            }
+            else
+            {
+                List<Plannen> plannen = model.GetAllData();
+                adapter = new PlannenAdapter(this, plannen, Resource.Layout.ReceptMenuListview);
+                plannenMenu.Adapter = adapter;
+            }
 
             plannenMenu.ItemClick += (s, e) =>
             {

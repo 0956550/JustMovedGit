@@ -38,25 +38,12 @@ namespace JustMovedGit.Models
             return huishouden;
         }
 
-        public List<Huishouden> GetSingleData(string id)
+        public Huishouden GetSingleData(string id)
         {
             List<Huishouden> huishouden = conn.Query<Huishouden>("SELECT * FROM huishouden")
                 .Where(r => r.id.Equals(id))
                 .ToList();
-            return huishouden;
-        }
-
-        public Boolean setFavorite(string id)
-        {
-            List<Huishouden> huishouden = conn.Query<Huishouden>("UPDATE huishouden SET favorite = 1 WHERE ID =" + id);
-            if (Int32.Parse(GetSingleData(id)[0].favorite) == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return huishouden[0];
         }
     }
 }

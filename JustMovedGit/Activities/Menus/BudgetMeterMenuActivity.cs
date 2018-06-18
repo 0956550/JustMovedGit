@@ -24,13 +24,17 @@ namespace JustMovedGit.Activities
             SetContentView(Resource.Layout.MenuView);
             ListView kostenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-            List<Kosten> kosten = model.GetAllData();
+            List<Kosten> kosten;
+            if(model.GetAllKosten(userId) == null)
+            {
+                kosten = null;
+            }
+            else
+            {
+                kosten = model.GetAllKosten(userId);
+            }
             KostenAdapter adapter = new KostenAdapter(this, kosten, Resource.Layout.KostenpostenListview);
             kostenMenu.Adapter = adapter;
-            
-
-
-
         }
     }
 }
