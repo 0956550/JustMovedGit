@@ -33,11 +33,10 @@ namespace JustMovedGit.Activities.Items
             ImageButton favorieten = FindViewById<ImageButton>(Resource.Id.favorietenReceptBtn);
 
             Models.PlannenModel model = new Models.PlannenModel();
-            List<Classes.Plannen> plannen = model.GetSingleData(id);
-            Classes.Plannen hetPlan = plannen[0];
+            Plannen plannen = model.GetSingleData(id);
 
-            titel.Text = hetPlan.titel;
-            beschrijving.Text = hetPlan.tip;
+            titel.Text = plannen.titel;
+            beschrijving.Text = plannen.tip;
 
             favorieten.Click += delegate
             {

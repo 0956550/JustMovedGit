@@ -38,25 +38,12 @@ namespace JustMovedGit.Models
             return plannen;
         }
 
-        public List<Plannen> GetSingleData(string id)
+        public Plannen GetSingleData(string id)
         {
             List<Plannen> plannen = conn.Query<Plannen>("SELECT * FROM plannen")
                 .Where(r => r.id.Equals(id))
                 .ToList();
-            return plannen;
-        }
-
-        public Boolean setFavorite(string id)
-        {
-            List<Plannen> recepten = conn.Query<Plannen>("UPDATE plannen SET favorite = 1 WHERE ID =" + id);
-            if (Int32.Parse(GetSingleData(id)[0].favorite) == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return plannen[0];
         }
     }
 }

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using JustMovedGit.Classes;
+using JustMovedGit.Models;
 using SQLite;
 
 namespace JustMovedGit.Models
@@ -53,10 +54,20 @@ namespace JustMovedGit.Models
             conn.Query<Relatie_Veiligheid>("DELETE FROM relatie_veiligheid WHERE gebruiker_id = " + userId + " AND veiligheid_id = " + veiligheidId);
         }
 
-        public List<Relatie_Veiligheid> getFavorieten()
+        public List<Veiligheid> getFavorieten(string userId)
         {
-            List<Relatie_Veiligheid> veiligheidFavorieten = conn.Query<Relatie_Veiligheid>("SELECT * FROM relatie_veiligheid")
+            VeiligheidModel model = new VeiligheidModel();
+
+            List<Relatie_Veiligheid> relatieVeiligheidFavorieten = conn.Query<Relatie_Veiligheid>("SElECT * FROM relatie_veiligheid WHERE gebruiker_id = " + userId)
                 .ToList();
+
+            List<Veiligheid> veiligheidFavorieten = new List<Veiligheid>();
+
+            foreach (Relatie_Veiligheid item in relatieVeiligheidFavorieten)
+            {
+                veiligheidFavorieten.Add(model.GetSingleData(item.veiligheid_id));
+            }
+
             return veiligheidFavorieten;
         }
     }
