@@ -20,6 +20,7 @@ namespace JustMovedGit.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
+            string userId;
             ListView budgetMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
             List<Budget> budget = model.GetAllData();
@@ -31,6 +32,7 @@ namespace JustMovedGit.Activities
             {
                 Intent budgetActivity = new Intent(this, typeof(BudgetActivity));
                 budgetActivity.PutExtra("id", adapter.GetBudget(e.Position).id);
+                budgetActivity.PutExtra("userId", adapter.GetBudget(e.Position).id);
                 this.StartActivity(budgetActivity);
             };
 

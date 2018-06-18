@@ -33,7 +33,7 @@ namespace JustMovedGit.Activities
                 LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
                 HuishoudenAdapter adapter;
                 EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
-            RelatieHuishoudenModel relatieHuishoudenModel = new RelatieHuishoudenModel();
+                RelatieHuishoudenModel relatieHuishoudenModel = new RelatieHuishoudenModel();
 
                 if (isFavoriteOption.Equals("1"))
                 {

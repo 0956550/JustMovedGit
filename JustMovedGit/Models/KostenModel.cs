@@ -35,7 +35,7 @@ namespace JustMovedGit.Models
         public List<Kosten> GetAllKosten(string userId)
         {
 
-            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget=0 AND gebruiker_id =" + userId)
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id =" + userId)
                 .ToList();
                 return kosten;
         }
@@ -48,6 +48,7 @@ namespace JustMovedGit.Models
         {
            return true;
         }
+
         public Boolean createKosten(string kosten, string beschrijving)
         {
             int kosten_id = 1;
@@ -77,6 +78,20 @@ namespace JustMovedGit.Models
 
             }
             
+            return false;
+        }
+        public Boolean checkUser(string userId)
+        {
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id =" + userId)
+                .ToList();
+
+            foreach(Kosten item in kosten)
+            {
+                if(userId.Equals(item.gebruiker_id))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 

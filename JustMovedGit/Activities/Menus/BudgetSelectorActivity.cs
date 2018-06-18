@@ -39,7 +39,6 @@ namespace JustMovedGit.Activities.Menus
             budgetPlannerBtn.Click += delegate
             {
                 
-
                 if (string.IsNullOrEmpty(userId))
                 {
                     Android.App.AlertDialog.Builder popupMessage1 = new AlertDialog.Builder(this);
@@ -54,7 +53,7 @@ namespace JustMovedGit.Activities.Menus
                 {
                     Intent budgetMeterMenuActivity = new Intent(this, typeof(BudgetMeterMenuActivity));
                     budgetMeterMenuActivity.PutExtra("userId", userId);
-                    this.StartActivity(budgetMeterMenuActivity);  //todo: in deze statement de verwijzingen vervangen met Jaspers budgetplanner activity
+                    this.StartActivity(budgetMeterMenuActivity);
                 }
             };
         }
