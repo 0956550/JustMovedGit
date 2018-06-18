@@ -46,7 +46,7 @@ namespace JustMovedGit.Models
 
         public Boolean createNewMaand(string kosten, string is_budget,string userId)
         {
-           //return true;
+           return true;
         }
         public Boolean createKosten(string kosten, string beschrijving)
         {
