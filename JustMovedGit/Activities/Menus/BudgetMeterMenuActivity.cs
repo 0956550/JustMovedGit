@@ -21,12 +21,23 @@ namespace JustMovedGit.Activities
             string userId = Intent.GetStringExtra("userId");
 
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MenuView);
+            SetContentView(Resource.Layout.BudgetMeterView);
             ListView kostenMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-            List<Kosten> kosten = model.GetAllData();
-            KostenAdapter adapter = new KostenAdapter(this, kosten, Resource.Layout.KostenpostenListview);
-            kostenMenu.Adapter = adapter;
+            //List<Kosten> kosten = model.GetAllKosten(userId);
+            List<Kosten> kosten;
+           
+            if (model.GetAllKosten(userId)==null)
+            {
+                kosten = null;
+            }
+            else
+            {
+                kosten = model.GetAllKosten(userId);
+                KostenAdapter adapter = new KostenAdapter(this, kosten, Resource.Layout.KostenpostenListview);
+                kostenMenu.Adapter = adapter;
+            }
+
             
 
 

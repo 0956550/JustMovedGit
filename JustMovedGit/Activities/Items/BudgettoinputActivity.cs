@@ -19,7 +19,7 @@ namespace JustMovedGit.Activities.Items
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.BudgetInvoerView);
-
+            
         }
     }
 }

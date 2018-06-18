@@ -30,11 +30,15 @@ namespace JustMovedGit.Activities
 
             ReceptenAdapter adapter;
 
+            EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
+
             if (isFavoriteOption.Equals("1"))
             {
                 List<Recept> recepten = relatieReceptModel.getFavorieten(userId);
                 adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
                 receptenMenu.Adapter = adapter;
+
+                searchBar.Visibility = Android.Views.ViewStates.Invisible;
             }
             else
             {
@@ -42,9 +46,6 @@ namespace JustMovedGit.Activities
                 adapter = new ReceptenAdapter(this, recepten, Resource.Layout.ReceptMenuListview);
                 receptenMenu.Adapter = adapter;
             }
-
-            
-            EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
 
             receptenMenu.ItemClick += (s, e) =>
             {
@@ -59,6 +60,7 @@ namespace JustMovedGit.Activities
             void searchBar_TextChanged(object sender, EventArgs e)
             {
                 string query = searchBar.Text.ToLower();
+
                 List<Recept>searchRecepten = model.GetSearchData(query);
                 adapter = new ReceptenAdapter(this, searchRecepten, Resource.Layout.ReceptMenuListview);
                 receptenMenu.Adapter = adapter;

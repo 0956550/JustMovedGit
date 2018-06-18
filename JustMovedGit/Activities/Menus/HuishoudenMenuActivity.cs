@@ -31,12 +31,26 @@ namespace JustMovedGit.Activities
                 SetContentView(Resource.Layout.MenuView);
                 ListView huishoudenMenu = FindViewById<ListView>(Resource.Id.ListView);
                 LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
-                List<Huishouden> huishouden = model.GetAllData();
-                HuishoudenAdapter adapter = new HuishoudenAdapter(this, huishouden, Resource.Layout.ReceptMenuListview);
-                huishoudenMenu.Adapter = adapter;
+                HuishoudenAdapter adapter;
                 EditText searchBar = FindViewById<EditText>(Resource.Id.searchBar);
+            RelatieHuishoudenModel relatieHuishoudenModel = new RelatieHuishoudenModel();
 
-                huishoudenMenu.ItemClick += (s, e) =>
+                if (isFavoriteOption.Equals("1"))
+                {
+                    List<Huishouden> huishouden = relatieHuishoudenModel.getFavorieten(userId);
+                    adapter = new HuishoudenAdapter(this, huishouden, Resource.Layout.ReceptMenuListview);
+                    huishoudenMenu.Adapter = adapter;
+
+                    searchBar.Visibility = Android.Views.ViewStates.Invisible;
+                }
+                else
+                {
+                    List<Huishouden> huishouden = model.GetAllData();
+                    adapter = new HuishoudenAdapter(this, huishouden, Resource.Layout.ReceptMenuListview);
+                    huishoudenMenu.Adapter = adapter;
+                }
+
+            huishoudenMenu.ItemClick += (s, e) =>
                 {
                     Intent huishoudenActivity = new Intent(this, typeof(HuishoudenActivity));
                     huishoudenActivity.PutExtra("id", adapter.GetHuishouden(e.Position).id);

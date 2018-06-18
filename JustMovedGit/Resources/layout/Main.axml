@@ -60,7 +60,7 @@
                 android:layout_height="280px"
                 android:layout_width="280px"
                 android:src="@drawable/budget"
-                android:id="@+id/budgetBtn"
+                android:id="@+id/budgetSelectorBtn"
                 android:scaleType="fitCenter"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:backgroundTint="@android:color/white" />

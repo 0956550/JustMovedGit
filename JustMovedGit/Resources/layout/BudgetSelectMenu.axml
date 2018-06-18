@@ -40,7 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtbudget"
-                android:layout_marginTop="10.0dp" />
+                android:layout_marginTop="10.0dp"
+                android:layout_marginLeft="114.0dp"
+                android:layout_marginRight="95.0dp" />
             <ImageButton
                 android:layout_height="280px"
                 android:layout_width="280px"
@@ -52,7 +54,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="34.0dp" />
             <TextView
-                android:text="Skrrt miljoenennota *dab dab*"
+                android:text="Budgetplanner"
                 android:textAllCaps="true"
                 android:textStyle="bold"
                 android:textSize="35px"
@@ -61,7 +63,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtBudgetPlanner"
-                android:layout_marginTop="10.0dp" />
+                android:layout_marginTop="10.0dp"
+                android:layout_marginLeft="78.0dp"
+                android:layout_marginRight="32.0dp" />
         </LinearLayout>
     </GridLayout>
 </LinearLayout>

@@ -103,6 +103,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Items\NewMaandActivity.cs" />
     <Compile Include="Activities\Items\HuishoudenActivity.cs" />
     <Compile Include="Activities\Items\KostenActivity.cs" />
     <Compile Include="Activities\Items\VeiligheidActivity.cs" />

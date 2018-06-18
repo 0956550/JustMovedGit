@@ -22,7 +22,8 @@ namespace JustMovedGit
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
+            ImageButton budgetSelectorBtn = FindViewById<ImageButton>(Resource.Id.budgetSelectorBtn);
+         //   ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
             ImageButton huishoudenBtn = FindViewById<ImageButton>(Resource.Id.huishoudenBtn);
             ImageButton plannenBtn = FindViewById<ImageButton>(Resource.Id.plannenBtn);
             ImageButton veiligheidBtn = FindViewById<ImageButton>(Resource.Id.veiligheidBtn);
@@ -36,14 +37,16 @@ namespace JustMovedGit
             {
                 Intent inlogActivity = new Intent(this, typeof(InlogActivity));
                 StartActivityForResult(inlogActivity, 0);
-                //this.StartActivity(inlogActivity);
             };
 
-            budgetBtn.Click += delegate
+            budgetSelectorBtn.Click += delegate
             {
                 Intent BudgetSelectorActivity = new Intent(this, typeof(BudgetSelectorActivity));
+                BudgetSelectorActivity.PutExtra("userId", userId);
                 this.StartActivity(BudgetSelectorActivity);
             };
+
+
 
             huishoudenBtn.Click += delegate
             {
@@ -57,6 +60,7 @@ namespace JustMovedGit
             {
                 Intent plannenMenuActivity = new Intent(this, typeof(PlannenMenuActivity));
                 plannenMenuActivity.PutExtra("userId", userId);
+                plannenMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(plannenMenuActivity);
             };
 
@@ -64,6 +68,7 @@ namespace JustMovedGit
             {
                 Intent veiligheidMenuActivity = new Intent(this, typeof(VeiligheidMenuActivity));
                 veiligheidMenuActivity.PutExtra("userId", userId);
+                veiligheidMenuActivity.PutExtra("isFavoriteOption", isFavoriteOption);
                 this.StartActivity(veiligheidMenuActivity);
             };
 

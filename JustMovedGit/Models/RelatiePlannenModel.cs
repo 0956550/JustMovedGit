@@ -54,11 +54,21 @@ namespace JustMovedGit.Models
             conn.Query<Relatie_Plannen>("DELETE FROM relatie_plannen WHERE gebruiker_id = " + userId + " AND plan_id = " + planId);
         }
 
-        public List<Relatie_Plannen> getFavorieten()
+        public List<Plannen> getFavorieten(string userId)
         {
-            List<Relatie_Plannen> plannenFavorieten = conn.Query<Relatie_Plannen>("SELECT * FROM relatie_plannen")
+            PlannenModel model = new PlannenModel();
+
+            List<Relatie_Plannen> relatiePlannenFavorieten = conn.Query<Relatie_Plannen>("SElECT * FROM relatie_plannen WHERE gebruiker_id = " + userId)
                 .ToList();
-            return plannenFavorieten;
+
+            List<Plannen> relatieFavorieten = new List<Plannen>();
+
+            foreach (Relatie_Plannen item in relatiePlannenFavorieten)
+            {
+                relatieFavorieten.Add(model.GetSingleData(item.plan_id));
+            }
+
+            return relatieFavorieten;
         }
     }
 }
