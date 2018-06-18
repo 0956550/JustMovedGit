@@ -131,6 +131,20 @@ namespace JustMovedGit
 			
 			// aapt resource value: 0x7f060034
 			public const int budgetSelectorBtn = 2131099700;
+			// aapt resource value: 0x7f060045
+			public const int createAccountBtn = 2131099717;
+			
+			// aapt resource value: 0x7f060046
+			public const int createAccountBtn = 2131099718;
+			// aapt resource value: 0x7f060034
+			public const int favorietenBtn = 2131099700;
+			// aapt resource value: 0x7f060013
+			public const int favorietenBudgetBtn = 2131099667;
+			// aapt resource value: 0x7f060034
+			public const int budgetSelectorBtn = 2131099700;
+			
+			// aapt resource value: 0x7f060035
+			public const int favorietenBtn = 2131099701;
 			
 			// aapt resource value: 0x7f060046
 			public const int createAccountBtn = 2131099718;
