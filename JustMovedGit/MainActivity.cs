@@ -43,6 +43,7 @@ namespace JustMovedGit
             budgetSelectorBtn.Click += delegate
             {
                 Intent BudgetSelectorActivity = new Intent(this, typeof(BudgetSelectorActivity));
+                BudgetSelectorActivity.PutExtra("userId", userId);
                 this.StartActivity(BudgetSelectorActivity);
             };
 

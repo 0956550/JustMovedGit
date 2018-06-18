@@ -35,11 +35,19 @@ namespace JustMovedGit.Models
         public List<Kosten> GetAllKosten(string userId)
         {
 
-            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id = "+userId)
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget=0 AND gebruiker_id =" + userId)
                 .ToList();
                 return kosten;
         }
+        public void NewMaand(string userId)
+        {
+            List<Kosten> kosten = conn.Query<Kosten>("DELETE * FROM kosten WHERE gebruiker_id ="+userId); 
+        }
 
+        public Boolean createNewMaand(string kosten, string is_budget,string userId)
+        {
+            Kosten NewBudget = new Kosten()
+        }
         public Boolean createKosten(string kosten, string beschrijving)
         {
             int kosten_id = 1;

@@ -15,15 +15,21 @@ namespace JustMovedGit.Activities.Menus
     [Activity(Label = "Budget", Theme = "@android:style/Theme.NoTitleBar")]
     public class BudgetSelectorActivity : Activity
     {
-        string userId = null;
+        
+
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.BudgetSelectMenu);
 
+            string userId = Intent.GetStringExtra("userId");
+
             ImageButton budgetBtn = FindViewById<ImageButton>(Resource.Id.budgetBtn);
             ImageButton budgetPlannerBtn = FindViewById<ImageButton>(Resource.Id.budgetPlannerBtn);
 
+           
             budgetBtn.Click += delegate
             {
                 Intent BudgetMenuActivity = new Intent(this, typeof(BudgetMenuActivity));
@@ -32,6 +38,8 @@ namespace JustMovedGit.Activities.Menus
 
             budgetPlannerBtn.Click += delegate
             {
+                
+
                 if (string.IsNullOrEmpty(userId))
                 {
                     Android.App.AlertDialog.Builder popupMessage1 = new AlertDialog.Builder(this);
@@ -44,9 +52,9 @@ namespace JustMovedGit.Activities.Menus
                 }
                 else
                 {
-                    Intent favorietenMenuActivity = new Intent(this, typeof(FavorietenMenuActivity)); 
-                    favorietenMenuActivity.PutExtra("userId", userId);
-                    this.StartActivity(favorietenMenuActivity);  //todo: in deze statement de verwijzingen vervangen met Jaspers budgetplanner activity
+                    Intent budgetMeterMenuActivity = new Intent(this, typeof(BudgetMeterMenuActivity));
+                    budgetMeterMenuActivity.PutExtra("userId", userId);
+                    this.StartActivity(budgetMeterMenuActivity);  //todo: in deze statement de verwijzingen vervangen met Jaspers budgetplanner activity
                 }
             };
         }

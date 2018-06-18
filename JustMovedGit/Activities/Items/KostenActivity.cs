@@ -28,14 +28,15 @@ namespace JustMovedGit.Activities.Items
             
             string id = Intent.GetStringExtra("id");
             string userId = Intent.GetStringExtra("userId");
+            string budget = Intent.GetStringExtra("budget");
             ImageButton newkosten = FindViewById<ImageButton>(Resource.Id.addKostenpostbtn);
             Button newMaand = FindViewById<Button>(Resource.Id.kostenpostbtn);
             Gebruiker gebruiker = loginModel.requestUser(userId);
 
             TextView budgetover = FindViewById<TextView>(Resource.Id.txtBudgetOver);
 
-            
-            
+            //budgetover = 
+            double budgetdouble = Convert.ToDouble(budget);
             double kostendoubles = 0; 
             Models.KostenModel model = new Models.KostenModel();
 
@@ -47,14 +48,20 @@ namespace JustMovedGit.Activities.Items
                 
 
             }
+            budgetover.Text = (budgetdouble - kostendoubles).ToString();
 
             newkosten.Click += delegate
             {
                 Intent Budgettoinput = new Intent(this, typeof(BudgettoinputActivity));
                 this.StartActivity(Budgettoinput);
             };
-            
-            
+
+            newMaand.Click += delegate
+            {
+                Intent newMaandactivity = new Intent(this, typeof(NewMaandActivity));
+                this.StartActivity(newMaandactivity);
+            };
+
         }
     }
 }

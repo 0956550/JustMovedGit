@@ -26,6 +26,7 @@ namespace JustMovedGit.Classes
             kosten_id = Kosten_id;
             kosten = Kosteng;
             beschrijving = Beschrijving;
+            
         }
 
         public Kosten()
