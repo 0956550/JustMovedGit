@@ -15,12 +15,12 @@ namespace JustMovedGit.Classes
     class Relatie_Huishouden
     {
         public string gebruiker_id { get; set; }
-        public string huishouden_id { get; set; }
+        public string huishoud_id { get; set; }
 
         public Relatie_Huishouden(string gebruikerId, string huishoudenId)
         {
             gebruiker_id = gebruikerId;
-            huishouden_id = huishoudenId;
+            huishoud_id = huishoudenId;
         }
         public Relatie_Huishouden()
         {

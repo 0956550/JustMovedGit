@@ -14,19 +14,18 @@ namespace JustMovedGit.Classes
 {
     class Kosten
     {
-        public string kosten_id { get; set; }
         public string kosten { get; set; }
         public string beschrijving { get; set; }
         public string gebruiker_id { get; set; }
         public string is_budget { get; set; }
         
 
-        public Kosten(string Kosten_id, string Kosteng, string Beschrijving)
+        public Kosten(string Kosteng, string Beschrijving, string gebruikerId, string isBudget)
         {
-            kosten_id = Kosten_id;
             kosten = Kosteng;
             beschrijving = Beschrijving;
-            
+            gebruiker_id = gebruikerId;
+            is_budget = isBudget;
         }
 
         public Kosten()

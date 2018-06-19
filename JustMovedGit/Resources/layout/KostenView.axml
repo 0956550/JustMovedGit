@@ -37,7 +37,9 @@
                     android:layout_height="match_parent"
                     android:id="@+id/kostenEditText"
                     android:background="#ECF0F1"
-                    android:textColor="#092B5B" />
+                    android:textColor="#092B5B" 
+                    android:inputType="none|numberDecimal|number"
+                    android:numeric="decimal|integer"/>
                 <TextView
                     android:text=","
                     android:textSize="40px"
@@ -50,9 +52,11 @@
                 <EditText
                     android:layout_width="150px"
                     android:layout_height="match_parent"
-                    android:id="@+id/kostenEditText"
+                    android:id="@+id/kostenEditText2"
                     android:background="#ECF0F1"
-                    android:textColor="#092B5B" />
+                    android:textColor="#092B5B" 
+                    android:inputType="none|numberDecimal|number"
+                    android:numeric="decimal|integer"/>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"

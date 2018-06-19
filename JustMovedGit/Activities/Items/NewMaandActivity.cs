@@ -42,11 +42,13 @@ namespace JustMovedGit.Activities.Items
                 }
                 else
                 {
-
-                    if (model.createNewMaand(budgetinputtxt.Text, "1", userId))
+                    model.createNewMaand(budgetinputtxt.Text, userId);
+                    List<Kosten> kosten = model.GetAllData();
+                    foreach(Kosten item in kosten)
                     {
-
+                        Console.WriteLine(item.kosten);
                     }
+                    messageHandler(3);
                 }
 
             };
@@ -78,7 +80,17 @@ namespace JustMovedGit.Activities.Items
                         });
                         alert2.Show();
                         break;
-
+                    case 3:
+                        Android.App.AlertDialog.Builder popupMessage3 = new AlertDialog.Builder(this);
+                        AlertDialog alert3 = popupMessage3.Create();
+                        alert3.SetTitle("Nieuwe maand gestart!");
+                        alert3.SetMessage("Door op ok te klikken zal u teruggaan naar het budgetmeter menu.");
+                        alert3.SetButton("OK", (c, ev) =>
+                        {
+                            Finish();
+                        });
+                        alert3.Show();
+                        break;
                 }
             }
         }

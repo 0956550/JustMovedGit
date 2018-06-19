@@ -17,13 +17,10 @@ namespace JustMovedGit.Models
     class KostenModel
     {
         private SQLiteConnection conn;
-        public List<Kosten> kosten;
         
         public KostenModel()
         {
             this.conn = new SQLiteConnection(DbHandler.GetLocalFilePath("JustMovedDb.sqlite"));
-            kosten = conn.Query<Kosten>("SELECT * FROM kosten")
-                .ToList();
         }
 
         public List<Kosten> GetAllData()
@@ -34,66 +31,47 @@ namespace JustMovedGit.Models
         }
         public List<Kosten> GetAllKosten(string userId)
         {
-
             List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id =" + userId)
                 .ToList();
                 return kosten;
         }
-        public void NewMaand(string userId)
+
+        public Kosten GetLimiet(string userId)
         {
-            List<Kosten> kosten = conn.Query<Kosten>("DELETE * FROM kosten WHERE gebruiker_id ="+userId); 
+            List<Kosten> allKosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 1 AND gebruiker_id = " + userId)
+                .ToList();
+
+            Kosten kosten = allKosten[0];
+
+            return kosten;
         }
 
-        public Boolean createNewMaand(string kosten, string is_budget,string userId)
+        public void createNewMaand(string kosten, string userId)
         {
-           return true;
+            conn.Query<Kosten>("DELETE FROM kosten WHERE gebruiker_id =" + userId);
+            List<Kosten> allKosten = GetAllData();
+            Kosten limiet = new Kosten(kosten, null, userId, "1");
+            conn.Insert(limiet);
         }
 
-        public Boolean createKosten(string kosten, string beschrijving)
+        public void createKosten(string kosten, string beschrijving, string userId)
         {
-            int kosten_id = 1;
-
-            foreach (Kosten item in this.kosten)
-            {
-                if (kosten_id != Int32.Parse(item.kosten_id))
-                {
-                    Kosten newKosten = new Kosten(kosten_id.ToString(), kosten, beschrijving);
-                    conn.Insert(newKosten);
-                    return true;
-                }
-
-                else if (kosten_id == Int32.Parse(item.kosten_id))
-                {
-                    kosten_id++;
-                }
-            }
-            foreach (Kosten item in this.kosten)
-            {
-                if (kosten_id != Int32.Parse(item.kosten_id))
-                {
-                    Kosten newKosten = new Kosten(kosten_id.ToString(), kosten, beschrijving);
-                    conn.Insert(newKosten);
-                    return true;
-                }
-
-            }
-            
-            return false;
+            Kosten kostenPost = new Kosten(kosten, beschrijving, userId, "0");
+            conn.Insert(kostenPost);
         }
+        
         public Boolean checkUser(string userId)
         {
-            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE is_budget = 0 AND gebruiker_id =" + userId)
-                .ToList();
+            List<Kosten> kosten = conn.Query<Kosten>("SELECT * FROM kosten WHERE gebruiker_id = " + userId + " AND is_budget = 1");
 
             foreach(Kosten item in kosten)
             {
-                if(userId.Equals(item.gebruiker_id))
+                if(item.gebruiker_id == userId)
                 {
                     return true;
                 }
             }
             return false;
         }
-
     }
 }

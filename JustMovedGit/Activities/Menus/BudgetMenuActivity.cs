@@ -20,7 +20,7 @@ namespace JustMovedGit.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuView);
-            string userId;
+            string userId = Intent.GetStringExtra("userId");
             ListView budgetMenu = FindViewById<ListView>(Resource.Id.ListView);
             LinearLayout linearLayout = FindViewById<LinearLayout>(Resource.Id.LinearLayout);
             List<Budget> budget = model.GetAllData();

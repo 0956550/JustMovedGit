@@ -62,17 +62,29 @@
         android:layout_marginBottom="25px"
         android:background="#092B5B"
         android:id="@+id/view1" />
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="580px"
-        android:id="@+id/scrollViewBudgetMeter">
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:stretchColumns="1"
+        android:layout_height="540px"
+        android:id="@+id/linearLayout2">
+        <ListView
             android:minWidth="25px"
-            android:minHeight="25px" />
-    </ScrollView>
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView1" />
+    </LinearLayout>
+    <Button
+        android:text="Refresh"
+        android:background="#092B5B"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="25px"
+        android:layout_marginBottom="25px"
+        android:id="@+id/refreshBtn" />
     <Button
         android:text="Begin nieuwe maand"
         android:background="#092B5B"

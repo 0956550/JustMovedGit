@@ -31,8 +31,8 @@ namespace JustMovedGit.Models
 
             foreach (Relatie_Huishouden item in  veiligheidFavorieten)
             {
-                Console.WriteLine("gebruiker: " + item.gebruiker_id + "+ huishouden: " + item.huishouden_id);
-                if (userId.Equals(item.gebruiker_id.ToString()) && huishoudenId.Equals(item.huishouden_id.ToString()))
+                Console.WriteLine("gebruiker: " + item.gebruiker_id + "+ huishouden: " + item.huishoud_id);
+                if (userId.Equals(item.gebruiker_id.ToString()) && huishoudenId.Equals(item.huishoud_id.ToString()))
                 {
                     return true;
                 }
@@ -64,7 +64,7 @@ namespace JustMovedGit.Models
 
             foreach (Relatie_Huishouden item in relatieHuishoudenFavorieten)
             {
-                huishoudenFavorieten.Add(model.GetSingleData(item.huishouden_id));
+                huishoudenFavorieten.Add(model.GetSingleData(item.huishoud_id));
             }
 
             return huishoudenFavorieten;
